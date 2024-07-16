@@ -7,8 +7,7 @@ function custom_theme_scripts() {
         array( $parent_style )
     );
     wp_enqueue_script( 'list-js', get_bloginfo( 'stylesheet_directory' ) . '/js/list.min.js', null, null, true);
-    //wp_enqueue_script( 'scrolltimeline-js', get_bloginfo( 'stylesheet_directory' ) . '/js/scroll-timeline.min.js', null, null, true);
-    wp_enqueue_script( 'main-js', get_bloginfo( 'stylesheet_directory' ) . '/js/main.js', array('list-js'), null, true);
+    wp_enqueue_script( 'main-js', get_bloginfo( 'stylesheet_directory' ) . '/js/main.min.js', array('list-js'), null, true);
 }
 add_action( 'wp_enqueue_scripts', 'custom_theme_scripts' );
 // Enqueue login styles
@@ -71,11 +70,4 @@ function newsletterSignUp() {
     return ob_get_clean(); 
 }
 add_shortcode('newsletterSignUp', 'newsletterSignUp');
-// Load parallax banner
-// function parallaxBanner() {
-//     ob_start();
-//     get_template_part( 'parallax-banner' );
-//     return ob_get_clean(); 
-// }
-// add_shortcode('parallaxBanner', 'parallaxBanner');
 ?>

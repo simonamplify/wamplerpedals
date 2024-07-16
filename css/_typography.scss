@@ -1,0 +1,189 @@
+$header-font: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+$body-font: system-ui, sans-serif;
+$fs-xxl: clamp(3rem, 4vw + 1rem, 4rem);
+$fs-xl: 2.5rem; // was 3
+$fs-lg: 2rem;
+$fs-md: 1.6rem;
+$fs-std: 1.2rem;
+$fs-sm: 1rem;
+$fs-xs: 0.8rem;
+
+$f-lh: 1.5;
+$h-lh: 1.2;
+
+body {
+    font-family: $body-font;
+    #page-container #et-main-area {
+        font-weight: 300;
+        font-size: $fs-std;
+        line-height: $f-lh;
+        color: $font-color;
+    }
+}
+
+// HEADERS
+body {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: $header-font;
+      font-weight: bold;
+      line-height: $h-lh;
+      color: $header-color;
+      padding-bottom: 0.3em;
+      &::selection {
+          color: $white-color;
+          -webkit-text-fill-color: $white-color;
+          background-color: $primary-color;
+      }
+    }
+    h1 { 
+        font-size: $fs-xl;
+    }
+    h2 { 
+        font-size: $fs-lg;
+    }
+    h3 { 
+        font-size: $fs-md;
+    }
+    h4, h5, h6 { 
+        font-size: $fs-std;
+    }
+    .heroHeader {
+        h1 {
+            font-size: $fs-xxl;
+        }
+    }
+    strong {
+        font-weight: 500;
+    }
+    sub, sup {
+        font-size: 0.8rem;
+    }
+}
+
+// LINKS
+#page-container #et-main-area #main-content {
+    a {
+        color: $primary-color;
+        text-decoration: none;
+        font-weight: 500;
+        cursor: pointer;
+        transition: color 0.2s linear;
+        &:hover {
+            color: $primary-color-drk;
+            color: color-mix(in srgb, $primary-color 80%, $black-color 20%);
+        }
+        &:active {
+            color: $primary-color-drk;
+            color: color-mix(in srgb, $primary-color 80%, $black-color 20%);
+        }
+        &::selection {
+            color: $white-color;
+            -webkit-text-fill-color: $white-color;
+            background-color: $primary-color;
+        }
+    }
+}
+
+// TEXT
+p::selection, span::selection {
+    color: $white-color;
+    -webkit-text-fill-color: $white-color;
+    background-color: $primary-color;
+}
+
+// LISTS
+#page-container #et-main-area {
+    ul, ol {
+        &::selection {
+            color: $white-color;
+            background-color: $primary-color;
+        }
+        line-height: $f-lh;
+        list-style-position: outside;
+        padding: 0 0 1em 1.3rem;
+        li {
+            &:not(:last-of-type) {
+                padding-bottom: 0.25em;
+            }
+            &::marker {
+                color: inherit;
+            }
+        }
+        ul, ol {
+            padding-bottom: 0;
+        }
+    }
+    ul {
+        ul{
+            &:nth-of-type(1) {
+                padding: 0 0 0 1.5rem;
+            }
+        }
+        
+    }
+    ol {
+        counter-reset: lv1Style;
+        padding: 0 0 1em 1.6rem;
+        li {
+            padding-left: 0.2rem;
+        }
+        ol {
+            &:nth-of-type(1) {
+                padding: 0 0 0 2.2rem;
+            }
+        }
+        > li {
+            counter-increment: lv1Style;
+            &::marker {
+                content:"[" counter(lv1Style, list-item)"] ";
+            }
+            > ol {
+                counter-reset: lv2Style;
+                > li {
+                    counter-increment: lv2Style;
+                    &::marker {
+                        content:"[" counter(lv2Style, lower-alpha)"] ";
+                    }
+                    > ol {
+                        counter-reset: lv3Style;
+                        > li {
+                            counter-increment: lv3Style;
+                            &::marker {
+                                content:"[" counter(lv3Style, lower-roman)"] ";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    p:last-of-type {
+        + ul, +ol {
+            padding-top: 1em;
+        }
+    }
+}
+
+// ADDRESS
+address {
+    font-style: normal;
+}
+
+// PREFERS CONTRAST
+@media (prefers-contrast: more) {
+    #page-container {
+        #et-main-area {
+            .et_pb_module:not(.et_pb_bg_layout_dark) {
+                color: color-mix(in srgb, currentColor 30%, $black-color 70%)!important;
+                h1, h2, h3, h4, h5, h6, ul li, ol li, p {
+                    color: color-mix(in srgb, currentColor 30%, $black-color 70%)!important;
+                }
+            }
+        }
+    }
+}

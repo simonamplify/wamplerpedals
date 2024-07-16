@@ -1,0 +1,30 @@
+[data-form-theme="gravity-theme"] {
+    .gform_fields {
+        .gfield {
+            legend {
+                font-weight: 500;
+            }
+            select {
+                padding: .5em 1em!important;
+                font-weight: 400!important;
+                font-size: 1rem !important;
+                line-height: 1.5 !important;
+                min-height: 40px !important;
+                border-radius: 0!important;
+            }
+            .gfield_required {
+                font-style: normal;
+            }
+        }
+    }   
+    input[type="submit"] {
+        line-height: 1.3em!important;
+        max-height: 46px;
+        padding: 0.5em 1.5em!important;
+        outline: 0.1em solid transparent!important;
+        &:hover {
+            outline-offset: 0.4em;
+            outline-color: $secondary-color!important;
+        }
+    }
+}

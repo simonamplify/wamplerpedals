@@ -1,0 +1,28 @@
+&.single-post {
+    .postSidebar {
+        .et_pb_widget {
+            margin-bottom: 1em;
+            a {
+                &:hover {
+                    color: $primary-color!important;
+                }
+            }
+            &.widget_archive {
+                select {
+                    margin: 0.5em 0 0 0!important;
+                    font-weight: 500!important;
+                    font-size: 0.9rem!important;
+                }
+            }
+        }
+    }
+    #comment-wrap {
+        h1#comments {
+            font-size: $fs-lg;
+            margin-bottom: 30px;
+        }
+        #reply-title {
+            font-size: $fs-lg;
+        }
+    }
+}

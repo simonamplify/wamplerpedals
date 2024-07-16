@@ -1,0 +1,233 @@
+// CHANGE HIGHLIGHT COLOUR
+::-moz-selection { 
+    background: $black-color; 
+    color: $white-color; 
+}
+::selection { 
+    background: $black-color;
+    color: $white-color; 
+}
+html {
+    scroll-behavior: smooth;
+}
+.imgContain {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .et_pb_image_wrap {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        img {
+            object-fit: contain;
+            height: 100%!important;
+            width: 100%!important;
+            position: absolute!important;
+            transform-origin: center;
+            object-position: center;
+        }
+    }
+}
+.imgCover {
+    height: 100%;
+    width: 100%;
+    position: absolute!important;
+    top: 0;
+    left: 0;
+    .et_pb_image_wrap {
+        height: 100%;
+        width: 100%;
+        position: absolute!important;
+        top: 0;
+        left: 0;
+        img {
+            object-fit: cover;
+            height: 100%!important;
+            width: 100%!important;
+            position: absolute!important;
+            transform-origin: center;
+            object-position: center;
+        }
+    }
+    
+}
+.flexHcenter {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.noLinkColor {
+    a {
+        color: inherit;
+        &:hover {
+            color: inherit;
+        }
+    }
+}
+.textBtn {
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    @include ease2();
+    color: $white-color;
+    .material-icons {
+        font-size: 18px;
+        position: absolute;
+        right: -22px;
+        top: 50%;
+        transform: translateY(-50%);
+        @include ease2();
+        color: $white-color;
+    }
+    &:hover {
+        .material-icons {
+            right: -24px;
+        }
+    }
+}
+.roundedCorners {
+    @include roundedCorners();
+}
+// Parallax Behaviours
+.parallaxScroll300Y {
+    @include parallaxScroll300Y();
+}
+.parallaxScroll250Y {
+    @include parallaxScroll250Y();
+}
+.parallaxScroll200Y {
+    @include parallaxScroll200Y();
+}
+.parallaxScroll150Y {
+    @include parallaxScroll150Y();
+}
+.parallaxScroll100Y {
+    @include parallaxScroll100Y();
+}
+.parallaxScroll-100Y {
+    @include parallaxScroll-100Y();
+}
+.parallaxScroll-150Y {
+    @include parallaxScroll-150Y();
+}
+.parallaxScroll-200Y {
+    @include parallaxScroll-200Y();
+}
+.parallaxScroll-250Y {
+    @include parallaxScroll-250Y();
+}
+.parallaxScroll-300Y {
+    @include parallaxScroll-300Y();
+}
+
+.parallaxView300Y {
+    @include parallaxView300Y();
+}
+.parallaxView250Y {
+    @include parallaxView250Y();
+}
+.parallaxView200Y {
+    @include parallaxView200Y();
+}
+.parallaxView150Y {
+    @include parallaxView150Y();
+}
+.parallaxView100Y {
+    @include parallaxView100Y();
+}
+.parallaxView-100Y {
+    @include parallaxView-100Y();
+}
+.parallaxView-150Y {
+    @include parallaxView-150Y();
+}
+.parallaxView-200Y {
+    @include parallaxView-200Y();
+}
+.parallaxView-250Y {
+    @include parallaxView-250Y();
+}
+.parallaxView-300Y {
+    @include parallaxView-300Y();
+}
+
+@keyframes parallax300Y {
+    to {
+        transform: translateY(300px);
+    }
+}
+@keyframes parallax250Y {
+    to {
+        transform: translateY(250px);
+    }
+}
+@keyframes parallax200Y {
+    to {
+        transform: translateY(200px);
+    }
+}
+@keyframes parallax150Y {
+    to {
+        transform: translateY(150px);
+    }
+}
+@keyframes parallax100Y {
+    to {
+        transform: translateY(100px);
+    }
+}
+@keyframes parallax-300Y {
+    to {
+        transform: translateY(-300px);
+    }
+}
+@keyframes parallax-250Y {
+    to {
+        transform: translateY(-250px);
+    }
+}
+@keyframes parallax-200Y {
+    to {
+        transform: translateY(-200px);
+    }
+}
+@keyframes parallax-150Y {
+    to {
+        transform: translateY(-150px);
+    }
+}
+@keyframes parallax-100Y {
+    to {
+        transform: translateY(-100px);
+    }
+}
+@keyframes parallaxBg {
+    from {
+        transform: translateY(-125px);
+    }
+    to {
+        transform: translateY(75px);
+    }
+}
+
+.scrollMaskSwipe {
+    @include scrollMaskSwipe();
+}
+@keyframes scrollMaskSwipe {
+    to { 
+        mask-size: 100% 100%;
+    }
+}
+.scrollMaskFade {
+    @include scrollMaskFade();
+}
+@keyframes scrollMaskFade {
+    to { 
+        opacity: 1;
+    }
+}

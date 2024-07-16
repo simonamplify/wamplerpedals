@@ -1,0 +1,49 @@
+////////////////////////////////////////////
+// SCREENS
+////////////////////////////////////////////
+$screen-xs: 497px;
+$screen-sm: 767px;
+$screen-md: 980px;
+$screen-lg: 1100px;
+$screen-xl: 1405px;
+
+$screen-max: 1920px;
+
+////////////////////////////////////////////
+// COLOURS
+////////////////////////////////////////////
+$white-color: rgb(255, 255, 255);
+$black-color: rgb(0, 0, 0);
+
+$primary-color: rgb(255, 115, 0); /* #FF7300 */
+$secondary-color: rgb(50, 230, 226); /* #32E6E2 */
+$tertiary-color: rgb(27, 40, 69); /* #1b2845 */
+
+//$font-color: rgb(50, 57, 72); /* #323948 */
+$font-color: rgb(21, 33, 53); /* #152135 */
+$header-color: $tertiary-color;
+
+$quaternary-color: rgb(122, 158, 149); /* #7A9E95 */
+$grey-color: rgb(245, 245, 245); /* #f5f5f5 */
+
+$error-color: rgb(221, 0, 0); /* #dd0000 */
+
+
+// DARK
+$primary-color-drk: rgb(102, 44, 0); /* #662c00 */
+$secondary-color-drk: rgb(23, 102, 98); /* #176662 */
+$tertiary-color-drk: rgb(21, 33, 53); /* #152135 */
+
+$quaternary-color-drk: rgb(62, 79, 74); /* #3e4f4a */
+$grey-color-drk: rgb(117, 117, 117); /* #757575 */
+
+$error-color-drk: rgb(94, 0, 0); /* #5e0000 */
+
+// LIGHT
+$primary-color-lht: rgb(255, 197, 153); /* #ffc599 */
+$secondary-color-lht: rgb(167, 242, 236); /* #a7f2ec */
+$tertiary-color-lht: rgb(184, 201, 232); /* #b8c9e8 */
+
+$quaternary-color-lht: rgb(199, 214, 213); /* #c7d6d5 */
+
+$error-color-drk: rgb(94, 0, 0); /* #5e0000 */

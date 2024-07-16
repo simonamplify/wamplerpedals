@@ -1,0 +1,93 @@
+// Account page overrides
+&.woocommerce-account {
+    .woocommerce {
+        form {
+            @include roundedCorners();
+            border: none;
+            background-color: $grey-color;
+            .form-row {
+                .woocommerce-form__label-for-checkbox {
+                    line-height: 36px!important;
+                    margin-top: 34px!important;
+                }
+                input.input-text {
+                    background-color: $white-color!important;
+                }
+            }
+            .button {
+                margin-top: 30px;
+            }
+        }
+        .woocommerce-MyAccount-navigation {
+            padding: 20px;
+            @include roundedCorners();
+            background-color: $quaternary-color-lht;
+            @media (min-width:981px) {
+                position: sticky!important;
+                position: -webkit-sticky!important;
+                top: calc(119px + 4%);
+                width: 26%;
+            }
+            @media (max-width:980px) {
+                margin-bottom: 40px;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0!important;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                gap: 15px;
+                @media (max-width:980px) {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                }
+                li {
+                    margin: 0;
+                    a {
+                        border-radius: .3em;
+                        color: $white-color!important;
+                        background-color: $tertiary-color;
+                        padding: 7px 20px 6px 20px;
+                        font-weight: bold;
+                        @include ease2();
+                        font-size: 1;
+                        &::before {
+                            content: none!important;
+                        }
+                        &::after {
+                            content: none!important;
+                        }
+                        &:hover {
+                            background-color: $tertiary-color;
+                            color: $primary-color!important;
+                        }
+                    }
+                    &.is-active {
+                        a {
+                            background-color: $tertiary-color;
+                            color: $primary-color!important;
+                        }
+                    }
+                }
+            }
+        }
+        .woocommerce-MyAccount-content {
+            .woocommerce-info {
+                background-color: $tertiary-color!important;
+            }
+            form {
+                padding: 20px;
+            }
+        }
+        .woocommerce-form-register {
+            .woocommerce-form-register__submit {
+                @include drkBtn();
+            }
+        }
+        .woocommerce-ResetPassword {
+            padding: 20px;
+        }
+    }
+}

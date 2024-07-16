@@ -1,0 +1,147 @@
+#hero.parallaxHero {
+    overflow-x: clip;
+    .videoBtn {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,-150%);
+        padding-left: 3em!important;
+        &::before {
+            transition: all 0.1s linear!important;
+            color: $secondary-color!important;
+            margin-left: -1.4em!important;
+        } 
+        &:hover {
+            &::before {
+                color: $tertiary-color!important;
+            }
+        }           
+    }
+    .heroImg {
+        img {
+            object-fit: contain;
+            @include parallaxScroll200Y();
+        }
+    }
+    .shape {
+        opacity: 0;
+        img {
+            object-fit: contain;
+        }
+        @supports (translate: initial) {
+            opacity: 0.5;
+        }
+        &:nth-child(1 of .shape) {
+            translate: 5px -15px;
+            scale: 1.25;
+            @include parallaxScroll150Y();
+        }
+        &:nth-child(2 of .shape) {
+            translate: 100px 80px;
+            @include parallaxScroll300Y();
+        }
+        &:nth-child(3 of .shape) {
+            @include parallaxScroll100Y();
+            translate: -100px -40px;
+        }
+    }
+    .parallaxBg {
+        img {
+            @include parallaxScroll100Y();
+        }
+        &:nth-child(2) {
+            mask: linear-gradient(90deg, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 100%);
+            mask-repeat: no-repeat;
+            clip-path: content-box;
+            mask-position: 0;
+            mask-composite: exclude;
+            mask-size: 0% 100%;
+            //opacity: 0;
+            //mask-size: 0% 100%;
+            @include scrollMaskSwipe();
+            // @supports (animation-range: 0px 200px) and (animation-timeline: scroll()) {
+            //     animation: scrollMaskSwipe linear both;
+            //     animation-timeline: scroll(block root);
+            //     animation-range: 0px 200px;
+            //     animation-range-end: 20vh;
+            // }
+            // @keyframes scrollMaskSwipe {
+            //     to { 
+            //         mask-size: 100% 100%;
+            //     }
+            // }
+        }
+    }
+    > .et_pb_row.parallax {
+        padding: 2% 0!important;
+        min-height: 720px;
+        height: 80vh;
+        @media (max-width:$screen-md) {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            width: 100%!important;
+            padding: 20px 0 0 0!important;
+            height: auto;
+        }
+        .et_pb_column {
+            margin: 0!important;
+            h1 {
+                font-size: $fs-xxl;
+                text-shadow: 0px .05rem .15em rgba(0,0,0,.2);
+            }
+            p {
+                padding-bottom: 0;
+                font-size: 1.4rem;
+                font-size: clamp(1.4rem,.5vw + 1rem,1.6rem);
+                font-weight: 400;
+                text-shadow: 0px .01rem .2em rgba(0,0,0,.5);
+            }
+            &:first-child {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-content: center;
+                gap: 1em;
+                z-index: 2;
+                @media (max-width:$screen-md) {
+                    order: 2;
+                    text-align: center;
+                    padding: 30px 5% 40px 5%;
+                    backdrop-filter: blur(8px);
+                    background: rgba(255, 255, 255, .1);
+                    border-top: solid 1px rgba(255, 255, 255, .2);
+                    justify-content: center;
+                }
+                .et_pb_text {
+                    flex: 0 0 100%;
+                    @media (max-width:$screen-md) {
+                        text-align: center;
+                    }
+                }
+                .vidBtn {
+                    &::before {
+                        transition: all 0.1s linear!important;
+                        color: $secondary-color!important;
+                        margin-left: -1.4em!important;
+                    } 
+                    &:hover {
+                        &::before {
+                            color: $tertiary-color!important;
+                        }
+                    } 
+                }
+            }
+            &:last-child {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                position: relative;
+                //@include parallaxScroll200Y();
+                @media (max-width:$screen-md) {
+                    order: 1;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+/* SIDE CART */
+.xoo-wsc-modal {
+    .xoo-wsc-container {
+        .xoo-wsc-basket {
+            @include boxShadow();
+            .xoo-wsc-items-count {
+                background-color: $secondary-color;
+                color: $tertiary-color-drk;
+                font-weight: 700;
+            }
+            .xoo-wsc-bki {
+                &::before {
+                    color: $tertiary-color;
+                }
+            }
+        }
+        .xoo-wsc-header {
+            .xoo-wsch-top {
+                .xoo-wsch-text {
+                    font-weight: bold;
+                }
+            }
+        }
+        .xoo-wsc-body {
+            background-color: $grey-color;
+            .xoo-wsc-products {
+                .xoo-wsc-product {
+                    border-radius: 0;
+                }
+            }
+        }
+        .xoo-wsc-ft-buttons-cont {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            gap: 0.65em;
+        }
+        .xoo-wsc-btn {
+            @include button();
+            font-size: 1rem;
+        }
+        .xoo-wsc-footer {
+            .xoo-wsc-btn {
+                &:not(.xoo-wsc-ft-btn-checkout) {
+                    @include drkBtn();
+                }
+            }
+        }
+    }
+    &.xoo-wsc-cart-active {
+        .xoo-wsc-opac {
+            opacity: 0.3;
+        }
+    }
+}

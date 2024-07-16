@@ -1,0 +1,46 @@
+.woocommerce-cart-form {
+    .product-remove {
+        a {
+            font-size: 1.2em;
+            line-height: 1.2rem;
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+    }
+    .product-subtotal {
+        font-weight: 500;
+    }
+    #coupon_code {
+        margin-right: 1em;
+        @media (max-width: $screen-md) {
+            margin-right: 10px;
+            background-color: $white-color;
+        }
+        @media (max-width: $screen-sm) {
+            margin-right: 0;
+        }
+        
+    }
+    .button {
+        @include drkBtn();
+        font-size: 1.1rem!important; 
+    }
+}
+.cart_totals {
+    .cart-subtotal {
+        font-weight: 500;
+    }
+    .woocommerce-shipping-totals {
+        .shipping-calculator-form {
+            margin-top: 0.5em;
+        }
+        .select2-selection {
+            background-color: $white-color!important;
+        }
+    }
+    .button[name="calc_shipping"] {
+        @include drkBtn();
+        font-size: 1.1rem!important;
+        margin: 0.5em 0;
+    }
+}

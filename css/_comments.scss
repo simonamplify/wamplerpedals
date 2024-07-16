@@ -1,0 +1,20 @@
+#comment-wrap {
+    .commentlist {
+        .comment {
+            padding: 0;
+            &::marker {
+                content: none!important;
+            }
+            p {
+                overflow-x: clip;
+            }
+            .reply-container {
+                .comment-reply-link {
+                    @include drkBtn();
+                    font-size: $fs-xs!important;
+                    margin-top: 1em;
+                }
+            }
+        }
+    }
+}

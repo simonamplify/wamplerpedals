@@ -1,0 +1,23 @@
+.et_pb_text {
+    &.et_pb_bg_layout_light {
+        strong {
+            color: $black-color;
+        }
+    }
+    &.et_pb_bg_layout_dark {
+        strong {
+            color: $white-color;
+        }
+        a {
+            color: $white-color;
+            &::before, &::after {
+                border-color: $white-color;
+            }
+        }
+    }
+    &.textTwoCol  {
+        .et_pb_text_inner {
+            @include textTwoCol();
+        }
+    }
+}

@@ -1,0 +1,194 @@
+.scroller {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 5%;
+    padding: 0 0 0 0;
+    overflow-x: auto;
+    // -ms-overflow-style: none;
+    // scrollbar-width: none;
+    // &::-webkit-scrollbar {
+    //     display: none;
+    // }
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    @media (hover:none) {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    * {
+        ::-moz-selection { 
+            background: transparent; 
+            color: initial; 
+            -webkit-text-fill-color: initial; 
+        }
+        ::selection { 
+            background: transparent; 
+            color: initial;
+            -webkit-text-fill-color: initial; 
+        }
+    }
+    @media (max-width: $screen-sm) {
+        gap: 0%;
+    }
+    .scrollerItem, .et_pb_module {
+        position: relative;
+        flex: 0 0 auto;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 17.75%;
+        // @media (hover:none) {
+        //     scroll-snap-align: start;
+        // }
+        img {
+            max-height: 60vh;
+            object-fit: contain;
+            @media (max-width: $screen-md) {
+                min-height: 360px;
+            }
+        }
+        max-width: 17.75%;
+        @media (max-width: $screen-xl) { 
+            width: 17.75%;
+            max-width: unset;
+        }
+        // LG
+        @media (max-width: $screen-lg) { 
+            width: 25%;
+        }
+        // MD
+        @media (max-width: $screen-md) { 
+            width: 35%;
+        }
+        // SM 
+        @media (max-width: $screen-sm) { 
+            width: 100%;
+        }
+    }
+    &.small {
+        .scrollerItem, .et_pb_module {
+            max-width: 47.5%;
+            // XL
+            @media (max-width: $screen-xl) { 
+                width: 47.5%;
+                max-width: unset;
+            }
+            // LG
+            @media (max-width: $screen-lg) { 
+                width: 60%;
+            }
+            // MD
+            @media (max-width: $screen-md) { 
+                width: 35%;
+            }
+            // SM 
+            @media (max-width: $screen-sm) { 
+                width: 100%;
+            }
+        }
+    }
+    @media (hover:hover) {
+        padding: 0 0 2em 0;
+        scrollbar-width: thin;
+        scrollbar-color: #b0b3b9 $grey-color;
+        overflow-x: scroll;
+        scrollbar-gutter: stable both-edges;
+        cursor: pointer;
+        &::-webkit-scrollbar {
+            height: 10px;
+            width: 10px;
+        }
+        &::-webkit-scrollbar-track {
+            border-radius: 5px;
+            background-color: $grey-color;
+        }
+        &::-webkit-scrollbar-track:hover {
+            background-color: $grey-color;
+        }
+        &::-webkit-scrollbar-track:active {
+            background-color: $grey-color;
+        }
+        &::-webkit-scrollbar-thumb {
+            border: solid 2px $grey-color;
+            border-radius: 10px;
+            background-color: #b0b3b9;
+            transition: 0.2s all linear
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: $black-color;
+        }
+        &::-webkit-scrollbar-thumb:active {
+            background-color: $black-color;
+        }
+        &::-webkit-scrollbar-button {
+            width: 0;
+            height: 0;
+            display: none;
+        }
+        &::-webkit-scrollbar-corner {
+            background-color: transparent;
+        }
+        &:hover {
+            overflow-x: auto;
+            overscroll-behavior-inline: none!important;
+            scroll-snap-type: none!important;
+            .scrollerItem, .et_pb_module {
+                scroll-snap-align: none!important;
+            }
+        }
+        * {
+            -webkit-user-drag: none;
+            user-drag: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        &.active {
+            cursor: grabbing;
+            .scrollerItem, .et_pb_module {
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+.sBtns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 0 1em 0;
+    gap: 1em;
+    button {
+        margin: 0;
+        padding: 0.3em;
+        border: none;
+        outline: none;
+        background-color: $quaternary-color-lht;
+        color: $quaternary-color;
+        border-radius: 50%;
+        line-height: 0;
+        cursor: pointer;
+        transition: background-color 0.1s linear, color 0.1s linear;
+        .material-icons {
+            touch-action: none;
+            pointer-events: none;
+        }
+        @media(hover:hover) {
+            &:hover {
+                background-color: $quaternary-color;
+                color: $quaternary-color-lht;
+            }
+        }
+        &[aria-disabled="true"] {
+            pointer-events: none;
+            opacity: 0.3;
+        }
+    }
+}

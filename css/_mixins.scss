@@ -1,0 +1,269 @@
+////////////////////////////////////////////
+// Mixins
+////////////////////////////////////////////
+@mixin ease5 {
+    transition: all 0.5s ease-in-out;
+}
+@mixin ease2 {
+    transition: all 0.2s ease-in-out;
+}
+@mixin ease4 {
+    transition: all 0.4s ease-in-out;
+}
+@keyframes fade100 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@mixin vertCenter {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@mixin horCenter {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin fixedCenter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin boxShadow {
+    box-shadow: 0px 2px 30px 0px rgba(21, 33, 53, 0.1);
+}
+@mixin textTwoCol {
+    @media (min-width: 768px) {
+        column-count: 2;
+        column-gap: 5%;
+        column-fill: balance;
+        p, li {
+            break-inside: avoid-column;
+        }
+        h1, h2, h3 {
+            column-span:all;
+        }
+    }
+}
+@mixin switch {
+    width: 64px!important;
+    border-radius: 22px!important;
+    &::after {
+        left: 4px!important;
+        top: 4px!important;
+        border-radius: 50%!important;
+        width: 24px!important;
+        height: 24px!important;
+        background: $tertiary-color!important;
+        transform: translateX(0)!important;
+        border: none!important;
+        opacity: 1!important;
+    }
+    &:checked {
+        &::after {
+            background: $white-color!important;
+            transform: translateX(30px)!important;
+        }
+    }
+    &:disabled {
+        &:not(:checked) {
+            &::after {
+                opacity: .6!important;
+            }
+        }
+    }
+}
+@mixin roundedCorners {
+    border-radius: 1.3rem;
+    overflow: clip;
+}
+@mixin parallaxScroll300Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: scroll()) {
+        animation: parallax300Y linear both;
+        animation-timeline: scroll(block root);
+        animation-range: 0px 1080px;
+        animation-range-end: 90vh;
+    }
+}
+@mixin parallaxScroll250Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: scroll()) {
+        animation: parallax250Y linear both;
+        animation-timeline: scroll(block root);
+        animation-range: 0px 1080px;
+        animation-range-end: 90vh;
+    }
+}
+@mixin parallaxScroll200Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: scroll()) {
+        animation: parallax200Y linear both;
+        animation-timeline: scroll(block root);
+        animation-range: 0px 1080px;
+        animation-range-end: 90vh;
+    }
+}
+@mixin parallaxScroll150Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: scroll()) {
+        animation: parallax150Y linear both;
+        animation-timeline: scroll(block root);
+        animation-range: 0px 1080px;
+        animation-range-end: 90vh;
+    }
+}
+@mixin parallaxScroll100Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: scroll()) {
+        animation: parallax100Y linear both;
+        animation-timeline: scroll(block root);
+        animation-range: 0px 1080px;
+        animation-range-end: 90vh;
+    }
+}
+@mixin parallaxScroll-100Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: scroll()) {
+        animation: parallax-100Y linear both;
+        animation-timeline: scroll(block root);
+        animation-range: 0px 1080px;
+        animation-range-end: 90vh;
+    }
+}
+@mixin parallaxScroll-150Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: scroll()) {
+        animation: parallax-150Y linear both;
+        animation-timeline: scroll(block root);
+        animation-range: 0px 1080px;
+        animation-range-end: 90vh;
+    }
+}
+@mixin parallaxScroll-200Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: scroll()) {
+        animation: parallax-200Y linear both;
+        animation-timeline: scroll(block root);
+        animation-range: 0px 1080px;
+        animation-range-end: 90vh;
+    }
+}
+@mixin parallaxScroll-250Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: scroll()) {
+        animation: parallax-250Y linear both;
+        animation-timeline: scroll(block root);
+        animation-range: 0px 1080px;
+        animation-range-end: 90vh;
+    }
+}
+@mixin parallaxScroll-300Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: scroll()) {
+        animation: parallax-300Y linear both;
+        animation-timeline: scroll(block root);
+        animation-range: 0px 1080px;
+        animation-range-end: 90vh;
+    }
+}
+
+@mixin parallaxView300Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: view()) {
+        animation: parallax300Y linear both;
+        animation-timeline: view(block);
+        animation-range: entry 30% exit 100%;
+    }
+}
+@mixin parallaxView250Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: view()) {
+        animation: parallax250Y linear both;
+        animation-timeline: view(block);
+        animation-range: entry 30% exit 100%;
+    }
+}
+@mixin parallaxView200Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: view()) {
+        animation: parallax200Y linear both;
+        animation-timeline: view(block);
+        animation-range: entry 30% exit 100%;
+    }
+}
+@mixin parallaxView150Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: view()) {
+        animation: parallax150Y linear both;
+        animation-timeline: view(block);
+        animation-range: entry 30% exit 100%;
+    }
+}
+@mixin parallaxView100Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: view()) {
+        animation: parallax100Y linear both;
+        animation-timeline: view(block);
+        animation-range: entry 30% exit 100%;
+    }
+}
+@mixin parallaxView-100Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: view()) {
+        animation: parallax-100Y linear both;
+        animation-timeline: view(block);
+        animation-range: entry 30% exit 100%;
+    }
+}
+@mixin parallaxView-150Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: view()) {
+        animation: parallax-150Y linear both;
+        animation-timeline: view(block);
+        animation-range: entry 30% exit 100%;
+    }
+}
+@mixin parallaxView-200Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: view()) {
+        animation: parallax-200Y linear both;
+        animation-timeline: view(block);
+        animation-range: entry 30% exit 100%;
+    }
+}
+@mixin parallaxView-250Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: view()) {
+        animation: parallax-250Y linear both;
+        animation-timeline: view(block);
+        animation-range: entry 30% exit 100%;
+    }
+}
+@mixin parallaxView-300Y {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: view()) {
+        animation: parallax-300Y linear both;
+        animation-timeline: view(block);
+        animation-range: entry 30% exit 100%;
+    }
+}
+
+@mixin parallaxBg {
+    @supports (animation-range: 0px 1080px) and (animation-timeline: view()) {
+        &.et_pb_image {
+            height: calc(100% + 100px);
+            animation: parallaxBg linear both;
+            animation-timeline: view(block);
+            animation-range: entry 30% exit 100%;
+        }
+    }
+}
+
+@mixin scrollMaskSwipe {
+    @supports (animation-range: 0px 200px) and (animation-timeline: scroll()) {
+        animation: scrollMaskSwipe linear both;
+        animation-timeline: scroll(block root);
+        animation-range: 0px 200px;
+        animation-range-end: 20vh;
+    }
+}
+@mixin scrollMaskFade {
+    @supports (animation-range: 0px 200px) and (animation-timeline: scroll()) {
+        animation: scrollMaskFade linear both;
+        animation-timeline: scroll(block root);
+        animation-range: 0px 200px;
+        animation-range-end: 20vh;
+    }
+}

@@ -1,0 +1,11 @@
+.wp-pagenavi {
+    a {
+        &:hover {
+            color: $tertiary-color!important;
+        }
+    }
+    .current {
+        color: $tertiary-color!important;
+        font-weight: 500!important;
+    }
+}

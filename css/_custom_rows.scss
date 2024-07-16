@@ -1,0 +1,50 @@
+// CHANGE GLOBAL ROW MAX WIDTH
+#top-header > .container,
+/*#main-header > .container,*/
+#et_search_outer > .container,
+body.single #main-content > .container,
+body.page:not(.et-tb-has-template) div.et_pb_row,
+body.page.et-tb-has-template .et-l--post div.et_pb_row,
+body.single-project div.et_pb_row,
+body.single-project div.et_pb_row.et_pb_row_fullwidth,
+body.et-db #et-boc .et-l .et_pb_row {
+    width: 90%;
+    max-width: $screen-max; 
+}
+@media all and (max-width: 980px) {
+    /* wrap row in a flex box */
+    .custom_row {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+        flex-wrap: wrap;
+    }
+    /* custom classes that will designate the order of columns in the flex box row */
+    .first-on-mobile {
+        -webkit-order: 1;
+        order: 1;
+    } 
+    .second-on-mobile {
+        -webkit-order: 2;
+        order: 2;
+    }	 
+    .third-on-mobile {
+        -webkit-order: 3;
+        order: 3;
+    }	 
+    .fourth-on-mobile {
+        -webkit-order: 4;
+        order: 4;
+    }
+    /* add margin to last column */
+    .custom_row:last-child .et_pb_column:last-child {
+        margin-bottom: 30px;
+    }	 
+}
+.et_pb_row.fullWidth {
+    width: 100%!important;
+    max-width: 100%!important;
+}

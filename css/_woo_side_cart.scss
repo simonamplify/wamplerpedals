@@ -37,7 +37,7 @@
         }
         .xoo-wsc-btn {
             @include button();
-            font-size: 1rem;
+            font-size: 1rem!important;
         }
         .xoo-wsc-footer {
             .xoo-wsc-btn {

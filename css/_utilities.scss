@@ -94,6 +94,9 @@ html {
     @include roundedCorners();
 }
 // Parallax Behaviours
+.parallaxBg {
+        @include parallaxBg();
+}
 .parallaxScroll300Y {
     @include parallaxScroll300Y();
 }

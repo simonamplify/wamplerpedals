@@ -80,6 +80,9 @@
                 &:last-of-type {
                     margin-bottom: 0;
                 }
+                &:has(input[data-name="Discontinued"]) {
+                    display: none!important;
+                }
             }
         }
     }

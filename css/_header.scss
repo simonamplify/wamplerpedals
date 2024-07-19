@@ -4,6 +4,11 @@
 header {
     @import 'menu_search';
     .et_pb_menu {
+        .et_pb_menu__logo {
+            img[src$=".svg"] {
+                width: auto!important;
+            }
+        }
         .et-menu-nav {
             ul.et-menu {
                 li.menu-item {

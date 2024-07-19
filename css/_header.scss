@@ -38,11 +38,17 @@ header {
                             }
                             
                         }
+                        > .sub-menu {
+                            transition-delay: 0.5s;
+                        }
                         &:hover {
                             > a {
                                 &::after {
                                     transform: rotate(180deg);
                                 }
+                            }
+                            > .sub-menu {
+                                transition-delay: 0s;
                             }
                         }
                     }

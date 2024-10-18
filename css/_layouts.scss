@@ -48,3 +48,57 @@ body.et-db #et-boc .et-l .et_pb_row {
     width: 100%!important;
     max-width: 100%!important;
 }
+/* GRID COLUMNS */
+.grid {
+    display: grid;
+    gap: 1rem; 
+    &.noRowGap {
+        grid-row-gap: 0;
+    }
+    &.noColGap {
+        grid-column-gap: 0;
+    }
+    & > .colSpanAll {
+        grid-column: 1/-1;
+    }
+}
+/* MD */
+@media (min-width: 768px) {
+    .grid {
+        gap: 2rem;
+        &.col2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        &.col3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        &.col4 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        & > .colSpan2 {
+            grid-column: span 2;
+        }
+    }
+}
+
+/* LG */
+@media (min-width: 1024px) { 
+    .grid {
+        gap: 3rem;
+        &.col2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        &.col3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        &.col4 {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+        & > .colSpan3 {
+            grid-row: span 3;
+        }
+        & > .colSpan4 {
+            grid-row: span 4;
+        }
+    } 
+}

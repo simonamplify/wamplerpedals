@@ -8,6 +8,7 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
     font-size: 1rem!important;
     line-height: $f-lh!important;
     min-height: 40px!important;
+    width: 100%;
 }
 .input-text {
     &::placeholder {
@@ -199,3 +200,4 @@ select:disabled:hover, select[aria-disabled=true]:hover {
     background-position: left 15px top 50%, 0 0;
     padding: 10px 20px 10px 33px;
 }
+@import 'gr_forms';

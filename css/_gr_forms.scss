@@ -1,0 +1,27 @@
+.grForm {
+    form {
+        gap: 1em!important;
+    }
+    &.pluginSignUp {
+        label {
+            display: block;
+            color: $white-color;
+            font-size: $fs-sm;
+            line-height: 1;
+            padding-bottom: 0.3em;
+        }
+        .inputHint {
+            font-size: $fs-xs;
+            color: $white-color;
+            line-height: 1;
+            padding-top: 0.3em;
+        }
+        .et_pb_button {
+            margin-top: 1em;
+        }
+        .invalid {
+            box-shadow: 0 0 5px 1px $error-color;
+            color: $error-color;   
+        }
+    }
+}

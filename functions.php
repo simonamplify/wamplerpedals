@@ -70,4 +70,11 @@ function newsletterSignUp() {
     return ob_get_clean(); 
 }
 add_shortcode('newsletterSignUp', 'newsletterSignUp');
+// Load plugin signup form with shortcode
+function pluginsSignUp() {
+    ob_start();
+    get_template_part( 'plugins-sign-up' );
+    return ob_get_clean(); 
+}
+add_shortcode('pluginsSignUp', 'pluginsSignUp');
 ?>

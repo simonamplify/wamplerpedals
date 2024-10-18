@@ -139,5 +139,41 @@
         });
         $('#artists .artist .artistDetails .artistContent a').attr('target', '_blank');
 
+        // Validate Get Response Form
+        /* American phone number */
+        let poPhone = null;
+        poPhone = document.querySelector('.grForm input[name="custom_phone"]');
+        let grVal = 1;
+        if(poPhone !== null && poPhone !== '') { // Check if phone field exists
+            const valPhone = () => { // Validate phone number starts with +1
+                if (poPhone.value !== "") { // If phone number field not empty
+                    if (poPhone.value.indexOf('+1') == 0) { // Check if +1 is present and pass validation
+                        grVal = 1;
+                        poPhone.classList.remove("invalid");
+                        return grVal;
+                    } else { // Fail validation
+                        grVal = 0;
+                        poPhone.classList.add("invalid");
+                        return grVal;
+                    }
+                } else { // If phone number field empty
+                    poPhone.classList.remove("invalid");
+                    grVal = 1;
+                }
+            }
+            const grFormBtn = document.querySelector('.grForm input[type="submit"]');
+            const valForm = (event) => { // If validation has failed prevent the form submitting
+                if (grVal === 0) {
+                    event.preventDefault();
+                } else {
+                    // Proceed with form submission
+                }
+            }
+            poPhone.addEventListener("touchend", valPhone);
+            poPhone.addEventListener("keyup", valPhone);
+            grFormBtn.addEventListener("click", valForm);
+        }
+        
+
 	});
 })(jQuery)

@@ -57,6 +57,10 @@
                 @include button();
                 margin-top: 0.5em;
             }
+            #et-boc .et-l .et_pb_row.fullWidth {
+                width: 100%!important;
+                max-width: 100%!important;
+            }
         }
         .pum-close {
             @include ease2();

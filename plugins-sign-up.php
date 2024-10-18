@@ -26,7 +26,7 @@
         <!-- Get the token at: https://app.getresponse.com/campaign_list.html -->
         <input type="hidden" name="campaign_token" value="Ki4MH" />
         <!-- Thank you page (optional) -->
-        <input type="hidden" name="thankyou_url" value="' . get_site_url(null, '/sign-up-complete/', 'https') . '"/>
+        <input type="hidden" name="thankyou_url" value="' . get_site_url(null, '/plugin-offer-sign-up-complete/', 'https') . '"/>
         <!-- Forward form data to your page (optional) 
         <input type="hidden" name="forward_data" value="" />-->
         <!-- Add subscriber to the follow-up sequence with a specified day (optional) -->

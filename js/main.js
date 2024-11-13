@@ -204,7 +204,7 @@
                             // Add your logic to submit to your backend server here.
                             let recaptchaResponse = document.getElementById("recaptchaResponse");
                             recaptchaResponse.value = token; // Set the recaptcha response
-                            fetch("/wp-content/themes/Divi-child/lib/recaptcha.php", {
+                            fetch("/wp-content/themes/wamplerpedals/lib/recaptcha.php", {
                                 method: "POST",
                                 body: new FormData(grForm), // Send the form data
                             })

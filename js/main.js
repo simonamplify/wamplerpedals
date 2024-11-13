@@ -140,40 +140,96 @@
         $('#artists .artist .artistDetails .artistContent a').attr('target', '_blank');
 
         // Validate Get Response Form
-        /* American phone number */
-        let poPhone = null;
-        poPhone = document.querySelector('.grForm input[name="custom_phone"]');
-        let grVal = 1;
-        if(poPhone !== null && poPhone !== '') { // Check if phone field exists
+        const grFormBtn = document.querySelector('.grForm input[type="submit"]');
+        if(grFormBtn !== null && grFormBtn !== '') { // Check if form button field exists
+            const grForm = document.querySelector('.grForm form');
+            const grFormAlert = document.querySelector('.grForm form .alert'); // Define the alert element
+            /* American phone number */
+            const poPhone = document.querySelector('.grForm input[name="custom_phone"]');
+            let pVal = 1;
             const valPhone = () => { // Validate phone number starts with +1
                 if (poPhone.value !== "") { // If phone number field not empty
                     if (poPhone.value.indexOf('+1') == 0) { // Check if +1 is present and pass validation
-                        grVal = 1;
+                        pVal = 1;
                         poPhone.classList.remove("invalid");
-                        return grVal;
                     } else { // Fail validation
-                        grVal = 0;
+                        pVal = 0;
                         poPhone.classList.add("invalid");
-                        return grVal;
                     }
                 } else { // If phone number field empty
                     poPhone.classList.remove("invalid");
-                    grVal = 1;
+                    pVal = 1;
                 }
             }
-            const grFormBtn = document.querySelector('.grForm input[type="submit"]');
-            const valForm = (event) => { // If validation has failed prevent the form submitting
-                if (grVal === 0) {
-                    event.preventDefault();
-                } else {
-                    // Proceed with form submission
-                }
-            }
+            // Listen to phone field and validate the form
             poPhone.addEventListener("touchend", valPhone);
             poPhone.addEventListener("keyup", valPhone);
+            // Validate the form if required fields are populated
+            const reqFields = grForm.querySelectorAll("[required]");
+            let rfVal = 1;
+            const valReqFields = () => {
+                for (var i = 0; i < reqFields.length; i++) {
+                    if (reqFields[i].value === ""){ // If the field is empty
+                        rfVal = 0;
+                        reqFields[i].classList.add("invalid");
+                    } else { // If the field is not empty
+                        rfVal = 1;
+                        reqFields[i].classList.remove("invalid");
+                    }
+                }
+            }
+            // Listen to required fields and validate the form
+            for (var i = 0; i < reqFields.length; i++) {
+                reqFields[i].addEventListener("touchend", valReqFields);
+                reqFields[i].addEventListener("keyup", valReqFields);
+            }
+            const formReturn = () => {
+                grFormAlert.textContent = "";
+            }
+            window.addEventListener("onpageshow", formReturn);
+            // If the form button is clicked
+            const valForm = (e) => {
+                e.preventDefault(); // Stop noraml actions
+                valPhone(); // Validate the phone field
+                valReqFields(); // Validate the required fields are populated
+                if (rfVal === 0 || pVal === 0) { // If validation fails
+                    e.preventDefault();
+                    grFormAlert.textContent = "Please ensure fields are populated appropriately.";
+                } else { // Otherwise hand over to google recaptcha
+                    grFormBtn.disabled = true;
+                    grFormAlert.textContent = "Processing...";
+                    /* reCaptcha */
+                    grecaptcha.ready(function() {
+                        grecaptcha.execute('6Ldo_N4UAAAAAK3pUABb8yv4CUpDxTaAu657Dpdt', {action: 'getresponse'}).then(function(token) {
+                            // Add your logic to submit to your backend server here.
+                            let recaptchaResponse = document.getElementById("recaptchaResponse");
+                            recaptchaResponse.value = token; // Set the recaptcha response
+                            fetch("/wp-content/themes/Divi-child/lib/recaptcha.php", {
+                                method: "POST",
+                                body: new FormData(grForm), // Send the form data
+                            })
+                            .then((response) => response.text())
+                            .then((response) => {
+                                const responseText = JSON.parse(response) // Get the response
+                                if(responseText.error !== "") { // If there is an error
+                                    grFormAlert.textContent = responseText.error;
+                                    grFormBtn.disabled = false;
+                                    return;
+                                } else if (responseText.success !== "") {
+                                    grFormAlert.textContent = responseText.success;
+                                    grFormBtn.disabled = false;
+                                    grForm.submit();
+                                    setTimeout(()=>{ 
+                                        formReturn();
+                                    }, 3000);
+                                }
+                            });
+                        });
+                    });
+                }
+            }
             grFormBtn.addEventListener("click", valForm);
         }
-        
 
 	});
 })(jQuery)

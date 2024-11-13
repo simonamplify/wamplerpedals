@@ -31,8 +31,11 @@
         <input type="hidden" name="forward_data" value="" />-->
         <!-- Add subscriber to the follow-up sequence with a specified day (optional) -->
 	    <input type="hidden" name="start_day" value="0" />
+        <!-- Google recaptcha token -->
+        <input type="hidden" name="recaptchaResponse" id="recaptchaResponse">
         <!-- Subscriber button -->
         <input type="submit" value="Submit" class="et_pb_button colSpanAll" />
+        <div class="alert colSpanAll"></div>
     </form>
 </div>
 

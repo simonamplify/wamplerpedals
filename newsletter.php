@@ -1,6 +1,6 @@
 <?php echo '
 
-<div class="et_pb_newsletter_form newsletterSignUp">
+<div class="et_pb_newsletter_form newsletterSignUp grForm">
     <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
         <!-- Name -->
         <p class="et_pb_newsletter_field">
@@ -17,8 +17,11 @@
         <input type="hidden" name="thankyou_url" value="https://www.wamplerpedals.com/sign-up-complete"/>
         <!-- Forward form data to your page (optional) -->
         <input type="hidden" name="forward_data" value="" />
+        <!-- Google recaptcha token -->
+        <input type="hidden" name="recaptchaResponse" id="recaptchaResponse">
         <!-- Subscriber button -->
         <input type="submit" value="I want in!" class="et_pb_button"/>
+        <div class="alert colSpanAll"></div>
     </form>
 </div>
 

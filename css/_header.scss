@@ -3,6 +3,10 @@
 ////////////////////////////////////////////
 header {
     @import 'menu_search';
+    .et_pb_section--with-menu {
+        padding-top: 0!important;
+        padding-bottom: 0!important;
+    }
     .et_pb_menu {
         .et_pb_menu__logo {
             img[src$=".svg"] {

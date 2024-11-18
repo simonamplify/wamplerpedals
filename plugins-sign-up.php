@@ -9,8 +9,8 @@
         </fieldset>
         <!-- Last Name -->
         <fieldset>
-            <label>Second name*</label>
-            <input type="text" name="last_name" placeholder="Second name" required />
+            <label>Surname*</label>
+            <input type="text" name="last_name" placeholder="Surname" required />
         </fieldset>
         <!-- Email field (required) -->
         <fieldset>

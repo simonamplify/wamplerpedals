@@ -17,6 +17,18 @@
                 object-fit: contain;
             }
         }
+        #merchandise {
+            .et_pb_wc_add_to_cart {
+                .variations_form.cart {
+                    .variations {
+                        margin-bottom: 0!important;
+                        td.value span:after {
+                            content: none!important;
+                        }
+                    }
+                }
+            }
+        }
         #hero {
             .videoBtn {
                 position: absolute;

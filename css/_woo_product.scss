@@ -26,6 +26,11 @@
                             content: none!important;
                         }
                     }
+                    .single_variation_wrap {
+                        > a {
+                            font-size: $fs-sm;
+                        }
+                    }
                 }
             }
         }

@@ -1,7 +1,7 @@
 .button {
     @include button();
-    font-weight: 700!important;
-    font-size: $fs-std!important;
+    font-weight: 700 !important;
+    font-size: $fs-std !important;
     + .added_to_cart {
         margin-left: 0.75em;
     }

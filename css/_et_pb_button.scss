@@ -1,122 +1,143 @@
 @mixin button {
     display: inline-block;
     position: relative;
-    font-weight: 700!important;
+    font-weight: 700 !important;
     font-size: $fs-std;
     font-family: $header-font;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 0.1em!important;
-    background-color: $secondary-color!important;
-    color: $tertiary-color!important;
+    letter-spacing: 0.1em !important;
+    background-color: $secondary-color !important;
+    color: $tertiary-color !important;
     padding: 0.5em 1.5em;
-    border: 0.1em solid $secondary-color!important;
-    transition: all 0.1s linear!important;
-    border-radius: 0.4em!important;
-    -webkit-border-radius: 0.4em!important;
+    border: 0.1em solid $secondary-color !important;
+    transition: all 0.1s linear !important;
+    border-radius: 0.4em !important;
+    -webkit-border-radius: 0.4em !important;
     text-decoration: none;
     line-height: 1.7em;
     cursor: pointer;
     &::after {
-        font-family: inherit!important;
+        font-family: inherit !important;
         content: "";
-        display: block!important;
+        display: block !important;
         opacity: 0;
         position: absolute;
         width: calc(100% - 0.01em);
         height: calc(100% - 0.01em);
         left: 50%;
         top: 50%;
-        transform: translate(-50%,-50%);
-        border: 0.05em solid $secondary-color!important;
+        transform: translate(-50%, -50%);
+        border: 0.05em solid $secondary-color !important;
         margin: 0;
-        transition: all 0.1s linear!important;
-        border-radius: 0.4em!important;
-        animation: none!important;
+        transition: all 0.1s linear !important;
+        border-radius: 0.4em !important;
+        animation: none !important;
     }
     &:hover {
-        background-color: $secondary-color!important;
-        color: $tertiary-color!important;
-        box-shadow: 0 0 0.5em color-mix(in srgb, $secondary-color 20%, transparent 80%);
+        background-color: $secondary-color !important;
+        color: $tertiary-color !important;
+        box-shadow: 0 0 0.5em
+            color-mix(in srgb, $secondary-color 20%, transparent 80%);
         &::after {
             width: calc(100% + 0.4em);
             height: calc(100% + 0.4em);
-            opacity: 1!important;
+            opacity: 1 !important;
         }
     }
     &:active {
-        background-color: color-mix(in srgb, $secondary-color 90%, $tertiary-color 10%);
+        background-color: color-mix(
+            in srgb,
+            $secondary-color 90%,
+            $tertiary-color 10%
+        );
         box-shadow: none;
         &::after {
             width: calc(100% + 0.4em);
             height: calc(100% + 0.4em);
-            opacity: 1!important;
+            opacity: 1 !important;
         }
     }
 }
 @mixin orangeBtn {
-    background-color: $primary-color!important;
-    color: $primary-color-drk!important;
-    border-color: $primary-color!important;
+    background-color: $primary-color !important;
+    color: $primary-color-drk !important;
+    border-color: $primary-color !important;
     &::after {
-        border-color: $primary-color!important;
+        border-color: $primary-color !important;
     }
     &:hover {
-        background-color: $primary-color!important;
-        color: $primary-color-drk!important;
-        box-shadow: 0 0 0.5em color-mix(in srgb, $primary-color 20%, transparent 80%)!important;
+        background-color: $primary-color !important;
+        color: $primary-color-drk !important;
+        box-shadow: 0 0 0.5em
+            color-mix(in srgb, $primary-color 20%, transparent 80%) !important;
     }
     &:active {
-        background-color: color-mix(in srgb, $primary-color 90%, $black-color 10%)!important;
+        background-color: color-mix(
+            in srgb,
+            $primary-color 90%,
+            $black-color 10%
+        ) !important;
     }
 }
 @mixin lhtBtn {
-    background-color: $white-color!important;
-    color: $tertiary-color!important;
-    border-color: $white-color!important;
+    background-color: $white-color !important;
+    color: $tertiary-color !important;
+    border-color: $white-color !important;
     &::after {
-        border-color: $white-color!important;
+        border-color: $white-color !important;
     }
     &:hover {
-        background-color: $white-color!important;
-        color: $tertiary-color!important;
-        box-shadow: 0 0 0.5em color-mix(in srgb, $white-color 20%, transparent 80%)!important;
+        background-color: $white-color !important;
+        color: $tertiary-color !important;
+        box-shadow: 0 0 0.5em
+            color-mix(in srgb, $white-color 20%, transparent 80%) !important;
     }
     &:active {
-        background-color: color-mix(in srgb, $white-color 90%, $black-color 10%)!important;
-        outline-color: color-mix(in srgb, $white-color 90%, $black-color 10%)!important;
+        background-color: color-mix(
+            in srgb,
+            $white-color 90%,
+            $black-color 10%
+        ) !important;
+        outline-color: color-mix(
+            in srgb,
+            $white-color 90%,
+            $black-color 10%
+        ) !important;
     }
 }
 @mixin drkBtn {
-    background-color: $tertiary-color-drk!important;
-    color: $white-color!important;
-    border-color: $tertiary-color-drk!important;
+    background-color: $tertiary-color-drk !important;
+    color: $white-color !important;
+    border-color: $tertiary-color-drk !important;
     &::after {
-        border-color: $tertiary-color-drk!important;
+        border-color: $tertiary-color-drk !important;
     }
     &:hover {
-        background-color: $tertiary-color-drk!important;
-        color: $white-color!important;
-        box-shadow: 0 0 0.5em color-mix(in srgb, $tertiary-color-drk 20%, transparent 80%)!important;
+        background-color: $tertiary-color-drk !important;
+        color: $white-color !important;
+        box-shadow: 0 0 0.5em
+            color-mix(in srgb, $tertiary-color-drk 20%, transparent 80%) !important;
     }
     &:active {
-        background-color: $tertiary-color!important;
+        background-color: $tertiary-color !important;
     }
 }
 @mixin glassBtn {
-    background-color: rgba($white-color, 0.05)!important;
-    color: $white-color!important;
+    background-color: rgba($white-color, 0.05) !important;
+    color: $white-color !important;
     backdrop-filter: blur(6px);
-    text-shadow: 0px .01rem 0.1em rgba(0,0,0,.5);
+    text-shadow: 0px 0.01rem 0.1em rgba(0, 0, 0, 0.5);
     &:hover {
-        background-color: $secondary-color!important;
-        color: $tertiary-color!important;
-        box-shadow: 0 0 0.5em color-mix(in srgb, $tertiary-color-drk 20%, transparent 80%)!important;
+        background-color: $secondary-color !important;
+        color: $tertiary-color !important;
+        box-shadow: 0 0 0.5em
+            color-mix(in srgb, $tertiary-color-drk 20%, transparent 80%) !important;
         text-shadow: none;
     }
     &:active {
-        background-color: $secondary-color!important;
-        color: $tertiary-color!important;
+        background-color: $secondary-color !important;
+        color: $tertiary-color !important;
         text-shadow: none;
     }
 }
@@ -124,7 +145,15 @@ body {
     #page-container {
         #et-main-area {
             #main-content {
-                .et_pb_button, .et_pb_button_module_wrapper .et_pb_button:not(.border), .et_pb_button_module_wrapper .et_button_no_icon.et_button_icon_visible.et_button_left .et_pb_button, .et_button_no_icon .et_pb_button, .et_pb_newsletter_button, .et_contact_bottom_container .et_pb_button, .button {
+                .et_pb_button,
+                .et_pb_button_module_wrapper .et_pb_button:not(.border),
+                .et_pb_button_module_wrapper
+                    .et_button_no_icon.et_button_icon_visible.et_button_left
+                    .et_pb_button,
+                .et_button_no_icon .et_pb_button,
+                .et_pb_newsletter_button,
+                .et_contact_bottom_container .et_pb_button,
+                .button {
                     @include button();
                     &.orangeBtn {
                         @include orangeBtn();

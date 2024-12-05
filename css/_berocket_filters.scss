@@ -13,11 +13,11 @@
     }
 }
 .prodSidebar {
-    position: -webkit-sticky!important;
-    position: sticky!important;
+    position: -webkit-sticky !important;
+    position: sticky !important;
     top: calc(119px + 4%);
     font-weight: 400;
-    @media (max-width:980px) {
+    @media (max-width: 980px) {
         top: 60px;
         max-height: 80vh;
         max-height: calc(100svh - 60px);
@@ -45,43 +45,43 @@
 .prodFilters {
     font-weight: 400;
     h3 {
-        font-size: $fs-std!important;
+        font-size: $fs-std !important;
         cursor: pointer;
     }
-    input[type='checkbox'] {
+    input[type="checkbox"] {
         height: 34px;
         width: 34px;
-        border: solid 1px #e1e1e1!important;
+        border: solid 1px #e1e1e1 !important;
         background: transparent;
         + label {
             line-height: 34px;
         }
         &:checked {
             background: $tertiary-color;
-            border-color: $tertiary-color!important;
+            border-color: $tertiary-color !important;
         }
         &:hover {
             &:not(:checked) {
                 &:not(:disabled) {
-                    border-color: $secondary-color!important;
+                    border-color: $secondary-color !important;
                 }
             }
         }
         &:focus {
             box-shadow: none;
-            border-color: $tertiary-color!important;
+            border-color: $tertiary-color !important;
         }
     }
     .bapf_ckbox {
         ul {
-            padding: 0.5em 0 0 0!important;
+            padding: 0.5em 0 0 0 !important;
             li {
-                margin-bottom: 0.2em!important;
+                margin-bottom: 0.2em !important;
                 &:last-of-type {
                     margin-bottom: 0;
                 }
                 &:has(input[data-name="Discontinued"]) {
-                    display: none!important;
+                    display: none !important;
                 }
             }
         }
@@ -89,8 +89,8 @@
     @media (max-width: 980px) {
         opacity: 0;
         pointer-events: none;
-        padding-top: 0!important;
-        padding-bottom: 0!important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
         max-height: 0;
         overflow: hidden;
         @include ease2();

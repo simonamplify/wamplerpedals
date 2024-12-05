@@ -1,11 +1,11 @@
 // CHANGE HIGHLIGHT COLOUR
-::-moz-selection { 
-    background: $black-color; 
-    color: $white-color; 
-}
-::selection { 
+::-moz-selection {
     background: $black-color;
-    color: $white-color; 
+    color: $white-color;
+}
+::selection {
+    background: $black-color;
+    color: $white-color;
 }
 html {
     scroll-behavior: smooth;
@@ -24,9 +24,9 @@ html {
         left: 0;
         img {
             object-fit: contain;
-            height: 100%!important;
-            width: 100%!important;
-            position: absolute!important;
+            height: 100% !important;
+            width: 100% !important;
+            position: absolute !important;
             transform-origin: center;
             object-position: center;
         }
@@ -35,25 +35,24 @@ html {
 .imgCover {
     height: 100%;
     width: 100%;
-    position: absolute!important;
+    position: absolute !important;
     top: 0;
     left: 0;
     .et_pb_image_wrap {
         height: 100%;
         width: 100%;
-        position: absolute!important;
+        position: absolute !important;
         top: 0;
         left: 0;
         img {
             object-fit: cover;
-            height: 100%!important;
-            width: 100%!important;
-            position: absolute!important;
+            height: 100% !important;
+            width: 100% !important;
+            position: absolute !important;
             transform-origin: center;
             object-position: center;
         }
     }
-    
 }
 .flexHcenter {
     display: flex;
@@ -95,7 +94,7 @@ html {
 }
 // Parallax Behaviours
 .parallaxBg {
-        @include parallaxBg();
+    @include parallaxBg();
 }
 .parallaxScroll300Y {
     @include parallaxScroll300Y();
@@ -222,7 +221,7 @@ html {
     @include scrollMaskSwipe();
 }
 @keyframes scrollMaskSwipe {
-    to { 
+    to {
         mask-size: 100% 100%;
     }
 }
@@ -230,7 +229,7 @@ html {
     @include scrollMaskFade();
 }
 @keyframes scrollMaskFade {
-    to { 
+    to {
         opacity: 1;
     }
 }

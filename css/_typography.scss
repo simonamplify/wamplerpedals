@@ -1,4 +1,5 @@
-$header-font: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+$header-font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
+    Arial, sans-serif;
 $body-font: system-ui, sans-serif;
 $fs-xxl: clamp(3rem, 4vw + 1rem, 4rem);
 $fs-xl: 2.5rem; // was 3
@@ -29,27 +30,29 @@ body {
     h4,
     h5,
     h6 {
-      font-family: $header-font;
-      font-weight: bold;
-      line-height: $h-lh;
-      color: $header-color;
-      padding-bottom: 0.3em;
-      &::selection {
-          color: $white-color;
-          -webkit-text-fill-color: $white-color;
-          background-color: $primary-color;
-      }
+        font-family: $header-font;
+        font-weight: bold;
+        line-height: $h-lh;
+        color: $header-color;
+        padding-bottom: 0.3em;
+        &::selection {
+            color: $white-color;
+            -webkit-text-fill-color: $white-color;
+            background-color: $primary-color;
+        }
     }
-    h1 { 
+    h1 {
         font-size: $fs-xl;
     }
-    h2 { 
+    h2 {
         font-size: $fs-lg;
     }
-    h3 { 
+    h3 {
         font-size: $fs-md;
     }
-    h4, h5, h6 { 
+    h4,
+    h5,
+    h6 {
         font-size: $fs-std;
     }
     .heroHeader {
@@ -60,7 +63,8 @@ body {
     strong {
         font-weight: 500;
     }
-    sub, sup {
+    sub,
+    sup {
         font-size: 0.8rem;
     }
 }
@@ -90,7 +94,8 @@ body {
 }
 
 // TEXT
-p::selection, span::selection {
+p::selection,
+span::selection {
     color: $white-color;
     -webkit-text-fill-color: $white-color;
     background-color: $primary-color;
@@ -98,7 +103,8 @@ p::selection, span::selection {
 
 // LISTS
 #page-container #et-main-area {
-    ul, ol {
+    ul,
+    ol {
         &::selection {
             color: $white-color;
             background-color: $primary-color;
@@ -114,17 +120,17 @@ p::selection, span::selection {
                 color: inherit;
             }
         }
-        ul, ol {
+        ul,
+        ol {
             padding-bottom: 0;
         }
     }
     ul {
-        ul{
+        ul {
             &:nth-of-type(1) {
                 padding: 0 0 0 1.5rem;
             }
         }
-        
     }
     ol {
         counter-reset: lv1Style;
@@ -140,21 +146,21 @@ p::selection, span::selection {
         > li {
             counter-increment: lv1Style;
             &::marker {
-                content:"[" counter(lv1Style, list-item)"] ";
+                content: "[" counter(lv1Style, list-item) "] ";
             }
             > ol {
                 counter-reset: lv2Style;
                 > li {
                     counter-increment: lv2Style;
                     &::marker {
-                        content:"[" counter(lv2Style, lower-alpha)"] ";
+                        content: "[" counter(lv2Style, lower-alpha) "] ";
                     }
                     > ol {
                         counter-reset: lv3Style;
                         > li {
                             counter-increment: lv3Style;
                             &::marker {
-                                content:"[" counter(lv3Style, lower-roman)"] ";
+                                content: "[" counter(lv3Style, lower-roman) "] ";
                             }
                         }
                     }
@@ -163,7 +169,8 @@ p::selection, span::selection {
         }
     }
     p:last-of-type {
-        + ul, +ol {
+        + ul,
+        + ol {
             padding-top: 1em;
         }
     }
@@ -179,9 +186,25 @@ address {
     #page-container {
         #et-main-area {
             .et_pb_module:not(.et_pb_bg_layout_dark) {
-                color: color-mix(in srgb, currentColor 30%, $black-color 70%)!important;
-                h1, h2, h3, h4, h5, h6, ul li, ol li, p {
-                    color: color-mix(in srgb, currentColor 30%, $black-color 70%)!important;
+                color: color-mix(
+                    in srgb,
+                    currentColor 30%,
+                    $black-color 70%
+                ) !important;
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6,
+                ul li,
+                ol li,
+                p {
+                    color: color-mix(
+                        in srgb,
+                        currentColor 30%,
+                        $black-color 70%
+                    ) !important;
                 }
             }
         }

@@ -1,15 +1,15 @@
 .et_pb_scroll_top {
-    border-radius: 0.2em!important;
-    background: rgba(50, 230, 226,0.7)!important;
+    border-radius: 0.2em !important;
+    background: rgba(50, 230, 226, 0.7) !important;
     @include ease4();
     &::before {
         color: $tertiary-color;
     }
     &:hover {
-        opacity: 1!important;
-        background: $secondary-color!important;
+        opacity: 1 !important;
+        background: $secondary-color !important;
     }
     .et-visible {
-        opacity: 1!important;
+        opacity: 1 !important;
     }
 }

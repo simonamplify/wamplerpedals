@@ -10,9 +10,11 @@
                                 font-size: 2rem;
                                 @include absCenter();
                                 margin: 0;
-                                transition: color 0.1s linear, opacity 0.1s linear!important;
+                                transition: color 0.1s linear,
+                                    opacity 0.1s linear !important;
                                 &::before {
-                                    transition: color 0.1s linear, opacity 0.1s linear;
+                                    transition: color 0.1s linear,
+                                        opacity 0.1s linear;
                                 }
                             }
                         }
@@ -22,12 +24,12 @@
             .et-pb-slider-arrows {
                 .et-pb-slider-arrow {
                     top: 40%;
-                } 
-            }  
+                }
+            }
         }
     }
     &.sideCarousel {
-        @media (min-width:768px) {
+        @media (min-width: 768px) {
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
@@ -42,10 +44,10 @@
                 margin: 0;
                 padding: 0;
                 .et_pb_carousel_items {
-                    height: 100%!important;
+                    height: 100% !important;
                     .et-pb-slider-arrows {
-                        display: none!important;
-                        visibility: hidden!important;
+                        display: none !important;
+                        visibility: hidden !important;
                     }
                     .et-carousel-group {
                         display: flex;

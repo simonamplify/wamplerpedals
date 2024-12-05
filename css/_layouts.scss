@@ -9,7 +9,7 @@ body.single-project div.et_pb_row,
 body.single-project div.et_pb_row.et_pb_row_fullwidth,
 body.et-db #et-boc .et-l .et_pb_row {
     width: 90%;
-    max-width: $screen-max; 
+    max-width: $screen-max;
 }
 @media all and (max-width: 980px) {
     /* wrap row in a flex box */
@@ -26,15 +26,15 @@ body.et-db #et-boc .et-l .et_pb_row {
     .first-on-mobile {
         -webkit-order: 1;
         order: 1;
-    } 
+    }
     .second-on-mobile {
         -webkit-order: 2;
         order: 2;
-    }	 
+    }
     .third-on-mobile {
         -webkit-order: 3;
         order: 3;
-    }	 
+    }
     .fourth-on-mobile {
         -webkit-order: 4;
         order: 4;
@@ -42,16 +42,16 @@ body.et-db #et-boc .et-l .et_pb_row {
     /* add margin to last column */
     .custom_row:last-child .et_pb_column:last-child {
         margin-bottom: 30px;
-    }	 
+    }
 }
 .et_pb_row.fullWidth {
-    width: 100%!important;
-    max-width: 100%!important;
+    width: 100% !important;
+    max-width: 100% !important;
 }
 /* GRID COLUMNS */
 .grid {
     display: grid;
-    gap: 1rem; 
+    gap: 1rem;
     &.noRowGap {
         grid-row-gap: 0;
     }
@@ -82,7 +82,7 @@ body.et-db #et-boc .et-l .et_pb_row {
 }
 
 /* LG */
-@media (min-width: 1024px) { 
+@media (min-width: 1024px) {
     .grid {
         gap: 3rem;
         &.col2 {
@@ -100,5 +100,5 @@ body.et-db #et-boc .et-l .et_pb_row {
         & > .colSpan4 {
             grid-row: span 4;
         }
-    } 
+    }
 }

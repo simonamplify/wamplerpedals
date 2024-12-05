@@ -4,14 +4,14 @@
             margin-bottom: 1em;
             a {
                 &:hover {
-                    color: $primary-color!important;
+                    color: $primary-color !important;
                 }
             }
             &.widget_archive {
                 select {
-                    margin: 0.5em 0 0 0!important;
-                    font-weight: 500!important;
-                    font-size: 0.9rem!important;
+                    margin: 0.5em 0 0 0 !important;
+                    font-weight: 500 !important;
+                    font-size: 0.9rem !important;
                 }
             }
         }

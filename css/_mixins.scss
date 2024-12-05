@@ -48,38 +48,41 @@
         column-count: 2;
         column-gap: 5%;
         column-fill: balance;
-        p, li {
+        p,
+        li {
             break-inside: avoid-column;
         }
-        h1, h2, h3 {
-            column-span:all;
+        h1,
+        h2,
+        h3 {
+            column-span: all;
         }
     }
 }
 @mixin switch {
-    width: 64px!important;
-    border-radius: 22px!important;
+    width: 64px !important;
+    border-radius: 22px !important;
     &::after {
-        left: 4px!important;
-        top: 4px!important;
-        border-radius: 50%!important;
-        width: 24px!important;
-        height: 24px!important;
-        background: $tertiary-color!important;
-        transform: translateX(0)!important;
-        border: none!important;
-        opacity: 1!important;
+        left: 4px !important;
+        top: 4px !important;
+        border-radius: 50% !important;
+        width: 24px !important;
+        height: 24px !important;
+        background: $tertiary-color !important;
+        transform: translateX(0) !important;
+        border: none !important;
+        opacity: 1 !important;
     }
     &:checked {
         &::after {
-            background: $white-color!important;
-            transform: translateX(30px)!important;
+            background: $white-color !important;
+            transform: translateX(30px) !important;
         }
     }
     &:disabled {
         &:not(:checked) {
             &::after {
-                opacity: .6!important;
+                opacity: 0.6 !important;
             }
         }
     }

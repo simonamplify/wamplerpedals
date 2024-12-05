@@ -2,15 +2,15 @@
 // Header
 ////////////////////////////////////////////
 header {
-    @import 'menu_search';
+    @import "menu_search";
     .et_pb_section--with-menu {
-        padding-top: 0!important;
-        padding-bottom: 0!important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
     }
     .et_pb_menu {
         .et_pb_menu__logo {
             img[src$=".svg"] {
-                width: auto!important;
+                width: auto !important;
             }
         }
         .et-menu-nav {
@@ -25,13 +25,14 @@ header {
                         overflow: hidden;
                         padding: 21px 16px;
                         font-size: $fs-std;
-                        transition: color 300ms ease, background-color 300ms ease!important;
+                        transition: color 300ms ease,
+                            background-color 300ms ease !important;
                     }
                     &:hover {
                         > a {
                             background-color: transparent;
                             opacity: 1;
-                            color: $primary-color!important;
+                            color: $primary-color !important;
                         }
                     }
                     &.menu-item-has-children {
@@ -39,7 +40,7 @@ header {
                             position: relative;
                             padding-right: 30px;
                             &::after {
-                                @include vertCenter; 
+                                @include vertCenter;
                                 line-height: 0;
                                 transition: transform ease-in-out 0.2s;
                                 right: 10px;
@@ -77,25 +78,30 @@ header {
                                 display: block;
                                 width: auto;
                                 text-align: left;
-                                border-radius: .3rem;
+                                border-radius: 0.3rem;
                                 white-space: nowrap;
                                 overflow: hidden;
                                 text-overflow: ellipsis;
                                 &:hover {
-                                    color: $primary-color!important;
-                                    background-color: rgba(255,255,255,0.15)!important;
+                                    color: $primary-color !important;
+                                    background-color: rgba(
+                                        255,
+                                        255,
+                                        255,
+                                        0.15
+                                    ) !important;
                                 }
                                 &::after {
                                     color: $quaternary-color-drk;
                                 }
                                 &::before {
                                     transform: translateY(0);
-                                }   
+                                }
                             }
                             .sub-menu {
-                                background-color: $white-color!important;
-                                border: .2rem solid $quaternary-color-lht;
-                                @media(hover:hover) {
+                                background-color: $white-color !important;
+                                border: 0.2rem solid $quaternary-color-lht;
+                                @media (hover: hover) {
                                     transition-delay: 0.5s;
                                 }
                                 li.menu-item {
@@ -103,10 +109,19 @@ header {
                                         color: $tertiary-color;
                                         &:hover {
                                             color: $primary-color;
-                                            background-color: rgba(0,0,0,0.02)!important;
+                                            background-color: rgba(
+                                                0,
+                                                0,
+                                                0,
+                                                0.02
+                                            ) !important;
                                         }
                                         &::after {
-                                            color: color-mix(in srgb, $header-color 80%, $white-color 20%);
+                                            color: color-mix(
+                                                in srgb,
+                                                $header-color 80%,
+                                                $white-color 20%
+                                            );
                                         }
                                     }
                                 }
@@ -116,16 +131,18 @@ header {
                                     transition-delay: 0s;
                                 }
                             }
-                            &.current-menu-ancestor, &.current-menu-item {
+                            &.current-menu-ancestor,
+                            &.current-menu-item {
                                 > a {
-                                    color: $primary-color!important;
+                                    color: $primary-color !important;
                                 }
                             }
                         }
                     }
-                    &.current-menu-ancestor, &.current-menu-item {
+                    &.current-menu-ancestor,
+                    &.current-menu-item {
                         > a {
-                            color: $primary-color!important;
+                            color: $primary-color !important;
                         }
                     }
                     &.account {
@@ -176,15 +193,16 @@ header {
                             position: relative;
                             @include ease4();
                             z-index: 1;
-                            color: $header-color!important;
-                            transition: color 300ms ease, background-color 300ms ease!important;
+                            color: $header-color !important;
+                            transition: color 300ms ease,
+                                background-color 300ms ease !important;
                             &:hover {
                                 background-color: transparent;
-                                color: $primary-color!important;
+                                color: $primary-color !important;
                                 opacity: 1;
                             }
                             &:active {
-                                color: $header-color!important;
+                                color: $header-color !important;
                             }
                         }
                         &.menu-item-has-children {
@@ -196,16 +214,16 @@ header {
                                     color: $header-color;
                                 }
                                 &::after {
-                                    font-family: 'ETmodules'; 
-                                    text-align: center; 
-                                    speak: none; 
-                                    font-weight: normal; 
-                                    font-variant: normal; 
-                                    text-transform: none; 
-                                    -webkit-font-smoothing: antialiased; 
-                                    font-size: 16px; 
-                                    content: '\33'; 
-                                    @include vertCenter; 
+                                    font-family: "ETmodules";
+                                    text-align: center;
+                                    //speak: none;
+                                    font-weight: normal;
+                                    font-variant: normal;
+                                    text-transform: none;
+                                    -webkit-font-smoothing: antialiased;
+                                    font-size: 16px;
+                                    content: "\33";
+                                    @include vertCenter;
                                     right: 5%;
                                     line-height: 0;
                                     transform-origin: center;
@@ -215,10 +233,10 @@ header {
                             }
                             > ul.sub-menu {
                                 padding: 0;
-                                display: flex!important;
+                                display: flex !important;
                                 flex-direction: column;
                                 flex-wrap: nowrap;
-                                background-color: $grey-color!important;
+                                background-color: $grey-color !important;
                                 padding: 1em 0;
                                 > .menu-item {
                                     padding: 0;
@@ -234,12 +252,12 @@ header {
                                     > ul.sub-menu {
                                         padding-left: 10%;
                                         padding-right: 10%;
-                                        background-color: $white-color!important;
+                                        background-color: $white-color !important;
                                         > .menu-item {
                                             > a {
                                                 padding: 6px 5%;
                                                 font-size: 0.9rem;
-                                                border-radius: .5rem;
+                                                border-radius: 0.5rem;
                                             }
                                         }
                                     }
@@ -256,17 +274,24 @@ header {
                             }
                             ul.sub-menu {
                                 padding: 1em 0;
-                                box-shadow: inset 0px 0px 10px 0px rgba(50, 57, 72, 0.15);
-                                display: none !important; 
+                                box-shadow: inset 0px 0px 10px 0px
+                                    rgba(50, 57, 72, 0.15);
+                                display: none !important;
                                 visibility: hidden !important;
                                 li.menu-item {
-                                    &.current-menu-ancestor, &.current-menu-item {
+                                    &.current-menu-ancestor,
+                                    &.current-menu-item {
                                         > a {
-                                            color: $primary-color!important;
-                                            background-color: rgba(0,0,0,0.02);
+                                            color: $primary-color !important;
+                                            background-color: rgba(
+                                                0,
+                                                0,
+                                                0,
+                                                0.02
+                                            );
                                         }
                                     }
-                                }  
+                                }
                             }
                             &.visible {
                                 > a {
@@ -276,19 +301,20 @@ header {
                                 }
                                 > {
                                     ul.sub-menu {
-                                        display: flex !important; 
+                                        display: flex !important;
                                         visibility: visible !important;
                                         margin: 0.75em 0;
                                     }
                                 }
                             }
                         }
-                        &.current-menu-ancestor, &.current-menu-item {
+                        &.current-menu-ancestor,
+                        &.current-menu-item {
                             > a {
-                                color: $primary-color!important;
-                                background-color: rgba(255,255,255,0.15);
+                                color: $primary-color !important;
+                                background-color: rgba(255, 255, 255, 0.15);
                                 &:hover {
-                                    color: $primary-color!important;
+                                    color: $primary-color !important;
                                 }
                             }
                         }

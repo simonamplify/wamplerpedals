@@ -10,12 +10,13 @@
         }
         a {
             color: $white-color;
-            &::before, &::after {
+            &::before,
+            &::after {
                 border-color: $white-color;
             }
         }
     }
-    &.textTwoCol  {
+    &.textTwoCol {
         .et_pb_text_inner {
             @include textTwoCol();
         }

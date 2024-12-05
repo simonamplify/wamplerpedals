@@ -4,7 +4,7 @@
         margin-bottom: 1em;
         > ul {
             font-weight: normal;
-            margin-top: 10px; 
+            margin-top: 10px;
             + ul {
                 margin-top: 0;
                 padding: 0;
@@ -47,7 +47,7 @@
                 &[data-type="select"] select:-ms-input-placeholder,
                 &[data-type="select"] select::-ms-input-placeholder,
                 &[data-type="select"] select::placeholder {
-                    opacity: 1!important;
+                    opacity: 1 !important;
                 }
                 &[data-type="select"] {
                     &::after {
@@ -67,7 +67,7 @@
                 }
             }
             .et_pb_contact_field:not(:last-of-type) {
-                margin-bottom: 15px!important;
+                margin-bottom: 15px !important;
             }
             .et_contact_bottom_container {
                 margin-top: unset;
@@ -75,7 +75,7 @@
             input[type="checkbox"] {
                 &:focus {
                     outline-color: $secondary-color;
-                    outline: none!important;
+                    outline: none !important;
                 }
                 + label {
                     i {
@@ -84,9 +84,9 @@
                 }
             }
             button[type="submit"] {
-                line-height: 1.5em!important;
+                line-height: 1.5em !important;
                 max-height: 46px;
-                padding: 0.5em 1.5em!important;
+                padding: 0.5em 1.5em !important;
                 font-weight: 700 !important;
             }
         }

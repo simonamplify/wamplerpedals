@@ -269,10 +269,10 @@
                                             grFormAlert.textContent =
                                                 responseText.success;
                                             grFormBtn.disabled = false;
-                                            // //grForm.submit();
-                                            // setTimeout(() => {
-                                            //     formReturn();
-                                            // }, 3000);
+                                            grForm.submit();
+                                            setTimeout(() => {
+                                                formReturn();
+                                            }, 3000);
                                         }
                                     });
                             });

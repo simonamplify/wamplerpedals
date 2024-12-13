@@ -247,7 +247,7 @@
                                     );
                                 recaptchaResponse.value = token; // Set the recaptcha response
                                 fetch(
-                                    "/wp-content/themes/Divi-child/lib/recaptcha.php",
+                                    "/wp-content/themes/wamplerpedals/lib/recaptcha.php",
                                     {
                                         method: "POST",
                                         body: new FormData(grForm), // Send the form data

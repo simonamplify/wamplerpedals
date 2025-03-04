@@ -58,21 +58,11 @@
             clip-path: content-box;
             mask-position: 0;
             mask-composite: exclude;
-            mask-size: 0% 100%;
-            //opacity: 0;
-            //mask-size: 0% 100%;
-            @include scrollMaskSwipe();
-            // @supports (animation-range: 0px 200px) and (animation-timeline: scroll()) {
-            //     animation: scrollMaskSwipe linear both;
-            //     animation-timeline: scroll(block root);
-            //     animation-range: 0px 200px;
-            //     animation-range-end: 20vh;
-            // }
-            // @keyframes scrollMaskSwipe {
-            //     to {
-            //         mask-size: 100% 100%;
-            //     }
-            // }
+            // @include scrollMaskSwipe();
+            // mask-size: 0% 100%;
+            @include scrollMaskFade();
+            mask-size: 100% 100%;
+            opacity: 0;
         }
     }
     > .et_pb_row.parallax {

@@ -48,7 +48,7 @@
         font-size: $fs-std !important;
         cursor: pointer;
     }
-    input[type="checkbox"] {
+    input[type='checkbox'] {
         height: 34px;
         width: 34px;
         border: solid 1px #e1e1e1 !important;
@@ -80,7 +80,8 @@
                 &:last-of-type {
                     margin-bottom: 0;
                 }
-                &:has(input[data-name="Discontinued"]) {
+                &:has(input[data-name='Discontinued']),
+                &:has(input[data-name='Service']) {
                     display: none !important;
                 }
             }

@@ -12,6 +12,15 @@
         .et_pb_wc_add_to_cart:has(.out-of-stock) {
             display: none;
         }
+        .stock-warning {
+            translate: 0 -1rem;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 400;
+            span {
+                font-weight: 500;
+            }
+        }
         .heroImg {
             img {
                 object-fit: contain;

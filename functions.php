@@ -85,4 +85,17 @@ function cart_related_products_heading($heading) {
     }
     return $heading;
 }
+// Exclude categories from FiboSearch plugin
+add_filter( 'dgwt/wcas/search/product_cat/args', function ( $args ) {
+    $args['exclude'] = array(779); // The IDs of categories to exclude
+    return $args;
+} );
+// Add stock message to single product pages after the price 
+add_action('woocommerce_single_product_summary', 'stockWarning', 11);
+function stockWarning() {
+    if ( locate_template( 'stock-warning.php' ) ) {
+        get_template_part( 'stock-warning' );
+    }
+    return '';
+}
 ?>

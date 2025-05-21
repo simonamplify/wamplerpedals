@@ -77,4 +77,12 @@ function pluginsSignUp() {
     return ob_get_clean(); 
 }
 add_shortcode('pluginsSignUp', 'pluginsSignUp');
+// Change 'Related Products' heading on the cart page
+add_filter('woocommerce_product_related_products_heading', 'cart_related_products_heading');
+function cart_related_products_heading($heading) {
+    if (is_cart()) {
+        $heading = 'Before you go...';
+    }
+    return $heading;
+}
 ?>

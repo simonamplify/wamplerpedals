@@ -1,15 +1,32 @@
 <?php
 function custom_theme_scripts() {
-    $parent_style = 'Divi';
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'child-style',
+    $parent_handle = 'Divi';
+    wp_enqueue_style(
+        'child-style',
         get_stylesheet_directory_uri() . '/style.css',
-        array( $parent_style )
+        array( $parent_handle ),
+        filemtime( get_stylesheet_directory() . '/style.css' )
     );
-    wp_enqueue_script( 'list-js', get_bloginfo( 'stylesheet_directory' ) . '/js/list.min.js', null, null, true);
-    wp_enqueue_script( 'main-js', get_bloginfo( 'stylesheet_directory' ) . '/js/main.min.js', array('list-js'), null, true);
+    wp_enqueue_script(
+        'list-js',
+        get_stylesheet_directory_uri() . '/js/lib/list.min.js',
+        null,
+        null,
+        true
+    );
+    wp_enqueue_script(
+        'main-js',
+        get_stylesheet_directory_uri() . '/js/main.min.js',
+        array('list-js'),
+        filemtime( get_stylesheet_directory() . '/js/main.min.js' ),
+        true
+    );
+    add_filter('script_loader_tag', function($tag, $handle, $src) {
+        if ( 'main-js' !== $handle ) return $tag;
+        return '<script type="module" src="' . esc_url( $src ) . '"></script>';
+    }, 10, 3);
 }
-add_action( 'wp_enqueue_scripts', 'custom_theme_scripts' );
+add_action( 'wp_enqueue_scripts', 'custom_theme_scripts', 11 ); // 11 to ensure it runs after the parent theme's scripts
 // Enqueue login styles
 function my_logincustomCSSfile() {
     wp_enqueue_style('login-styles', get_stylesheet_directory_uri() . '/css/login_stylesheet.css');
@@ -59,22 +76,14 @@ function logout_redirect(){
 // Load artists with shortcode
 function artistsDirectory() {
     ob_start();
-    get_template_part( 'artists' );
+    get_template_part( 'includes/artists' );
     return ob_get_clean(); 
 }
 add_shortcode('artistsDirectory', 'artistsDirectory');
-// Load newsletter form with shortcode
-function newsletterSignUp() {
-    ob_start();
-    get_template_part( 'newsletter' );
-    return ob_get_clean(); 
+// Load product recommendation with shortcode
+function productRecommendation_shortcode() {
+    require_once get_stylesheet_directory() . '/includes/product-recommendation.php';
+    return render_product_recommendation();
 }
-add_shortcode('newsletterSignUp', 'newsletterSignUp');
-// Load plugin signup form with shortcode
-function pluginsSignUp() {
-    ob_start();
-    get_template_part( 'plugins-sign-up' );
-    return ob_get_clean(); 
-}
-add_shortcode('pluginsSignUp', 'pluginsSignUp');
+add_shortcode( 'productRecommendation', 'productRecommendation_shortcode' );
 ?>

@@ -1,0 +1,386 @@
+[
+    {
+        "Style": "Blues & Soul",
+        "Use": "Fender/Clean Amps",
+        "Want": "Smooth Overdrive",
+        "Recommendation": 242
+    },
+    {
+        "Style": "Blues & Soul",
+        "Use": "Fender/Clean Amps",
+        "Want": "Heavy Distortion",
+        "Recommendation": 247
+    },
+    {
+        "Style": "Blues & Soul",
+        "Use": "Fender/Clean Amps",
+        "Want": "Clean Boost",
+        "Recommendation": 251
+    },
+    {
+        "Style": "Blues & Soul",
+        "Use": "Fender/Clean Amps",
+        "Want": "Vintage Tones",
+        "Recommendation": 41985
+    },
+    {
+        "Style": "Blues & Soul",
+        "Use": "Marshall/British",
+        "Want": "Smooth Overdrive",
+        "Recommendation": 241
+    },
+    {
+        "Style": "Blues & Soul",
+        "Use": "Marshall/British",
+        "Want": "Heavy Distortion",
+        "Recommendation": 40064
+    },
+    {
+        "Style": "Blues & Soul",
+        "Use": "Marshall/British",
+        "Want": "Clean Boost",
+        "Recommendation": 46827
+    },
+    {
+        "Style": "Blues & Soul",
+        "Use": "Marshall/British",
+        "Want": "Vintage Tones",
+        "Recommendation": 33436
+    },
+    {
+        "Style": "Blues & Soul",
+        "Use": "Vox AC30",
+        "Want": "Smooth Overdrive",
+        "Recommendation": 234
+    },
+    {
+        "Style": "Blues & Soul",
+        "Use": "Vox AC30",
+        "Want": "Heavy Distortion",
+        "Recommendation": 239
+    },
+    {
+        "Style": "Blues & Soul",
+        "Use": "Vox AC30",
+        "Want": "Clean Boost",
+        "Recommendation": 46827
+    },
+    {
+        "Style": "Blues & Soul",
+        "Use": "Vox AC30",
+        "Want": "Vintage Tones",
+        "Recommendation": 241
+    },
+    {
+        "Style": "Blues & Soul",
+        "Use": "Modern High-Gain",
+        "Want": "Smooth Overdrive",
+        "Recommendation": 33384
+    },
+    {
+        "Style": "Blues & Soul",
+        "Use": "Modern High-Gain",
+        "Want": "Heavy Distortion",
+        "Recommendation": 47623
+    },
+    {
+        "Style": "Blues & Soul",
+        "Use": "Modern High-Gain",
+        "Want": "Clean Boost",
+        "Recommendation": 240
+    },
+    {
+        "Style": "Blues & Soul",
+        "Use": "Modern High-Gain",
+        "Want": "Vintage Tones",
+        "Recommendation": 38965
+    },
+    {
+        "Style": "Classic Rock",
+        "Use": "Fender/Clean Amps",
+        "Want": "Smooth Overdrive",
+        "Recommendation": 242
+    },
+    {
+        "Style": "Classic Rock",
+        "Use": "Fender/Clean Amps",
+        "Want": "Heavy Distortion",
+        "Recommendation": 247
+    },
+    {
+        "Style": "Classic Rock",
+        "Use": "Fender/Clean Amps",
+        "Want": "Clean Boost",
+        "Recommendation": 40870
+    },
+    {
+        "Style": "Classic Rock",
+        "Use": "Fender/Clean Amps",
+        "Want": "Vintage Tones",
+        "Recommendation": 237
+    },
+    {
+        "Style": "Classic Rock",
+        "Use": "Marshall/British",
+        "Want": "Smooth Overdrive",
+        "Recommendation": 40065
+    },
+    {
+        "Style": "Classic Rock",
+        "Use": "Marshall/British",
+        "Want": "Heavy Distortion",
+        "Recommendation": 34598
+    },
+    {
+        "Style": "Classic Rock",
+        "Use": "Marshall/British",
+        "Want": "Clean Boost",
+        "Recommendation": 242
+    },
+    {
+        "Style": "Classic Rock",
+        "Use": "Marshall/British",
+        "Want": "Vintage Tones",
+        "Recommendation": 241
+    },
+    {
+        "Style": "Classic Rock",
+        "Use": "Vox AC30",
+        "Want": "Smooth Overdrive",
+        "Recommendation": 33384
+    },
+    {
+        "Style": "Classic Rock",
+        "Use": "Vox AC30",
+        "Want": "Heavy Distortion",
+        "Recommendation": 35392
+    },
+    {
+        "Style": "Classic Rock",
+        "Use": "Vox AC30",
+        "Want": "Clean Boost",
+        "Recommendation": 46827
+    },
+    {
+        "Style": "Classic Rock",
+        "Use": "Vox AC30",
+        "Want": "Vintage Tones",
+        "Recommendation": 56018
+    },
+    {
+        "Style": "Classic Rock",
+        "Use": "Modern High-Gain",
+        "Want": "Smooth Overdrive",
+        "Recommendation": 38965
+    },
+    {
+        "Style": "Classic Rock",
+        "Use": "Modern High-Gain",
+        "Want": "Heavy Distortion",
+        "Recommendation": 231
+    },
+    {
+        "Style": "Classic Rock",
+        "Use": "Modern High-Gain",
+        "Want": "Clean Boost",
+        "Recommendation": 251
+    },
+    {
+        "Style": "Classic Rock",
+        "Use": "Modern High-Gain",
+        "Want": "Vintage Tones",
+        "Recommendation": 33436
+    },
+    {
+        "Style": "Hard Rock/Metal",
+        "Use": "Fender/Clean Amps",
+        "Want": "Smooth Overdrive",
+        "Recommendation": 38965
+    },
+    {
+        "Style": "Hard Rock/Metal",
+        "Use": "Fender/Clean Amps",
+        "Want": "Heavy Distortion",
+        "Recommendation": 239
+    },
+    {
+        "Style": "Hard Rock/Metal",
+        "Use": "Fender/Clean Amps",
+        "Want": "Clean Boost",
+        "Recommendation": 40870
+    },
+    {
+        "Style": "Hard Rock/Metal",
+        "Use": "Fender/Clean Amps",
+        "Want": "Vintage Tones",
+        "Recommendation": 40065
+    },
+    {
+        "Style": "Hard Rock/Metal",
+        "Use": "Marshall/British",
+        "Want": "Smooth Overdrive",
+        "Recommendation": 241
+    },
+    {
+        "Style": "Hard Rock/Metal",
+        "Use": "Marshall/British",
+        "Want": "Heavy Distortion",
+        "Recommendation": 36996
+    },
+    {
+        "Style": "Hard Rock/Metal",
+        "Use": "Marshall/British",
+        "Want": "Clean Boost",
+        "Recommendation": 234
+    },
+    {
+        "Style": "Hard Rock/Metal",
+        "Use": "Marshall/British",
+        "Want": "Vintage Tones",
+        "Recommendation": 54838
+    },
+    {
+        "Style": "Hard Rock/Metal",
+        "Use": "Vox AC30",
+        "Want": "Smooth Overdrive",
+        "Recommendation": 235
+    },
+    {
+        "Style": "Hard Rock/Metal",
+        "Use": "Vox AC30",
+        "Want": "Heavy Distortion",
+        "Recommendation": 239
+    },
+    {
+        "Style": "Hard Rock/Metal",
+        "Use": "Vox AC30",
+        "Want": "Clean Boost",
+        "Recommendation": 46827
+    },
+    {
+        "Style": "Hard Rock/Metal",
+        "Use": "Vox AC30",
+        "Want": "Vintage Tones",
+        "Recommendation": 41985
+    },
+    {
+        "Style": "Hard Rock/Metal",
+        "Use": "Modern High-Gain",
+        "Want": "Smooth Overdrive",
+        "Recommendation": 235
+    },
+    {
+        "Style": "Hard Rock/Metal",
+        "Use": "Modern High-Gain",
+        "Want": "Heavy Distortion",
+        "Recommendation": 47623
+    },
+    {
+        "Style": "Hard Rock/Metal",
+        "Use": "Modern High-Gain",
+        "Want": "Clean Boost",
+        "Recommendation": 234
+    },
+    {
+        "Style": "Hard Rock/Metal",
+        "Use": "Modern High-Gain",
+        "Want": "Vintage Tones",
+        "Recommendation": 252
+    },
+    {
+        "Style": "Country & Clean",
+        "Use": "Fender/Clean Amps",
+        "Want": "Smooth Overdrive",
+        "Recommendation": 33384
+    },
+    {
+        "Style": "Country & Clean",
+        "Use": "Fender/Clean Amps",
+        "Want": "Heavy Distortion",
+        "Recommendation": 35392
+    },
+    {
+        "Style": "Country & Clean",
+        "Use": "Fender/Clean Amps",
+        "Want": "Clean Boost",
+        "Recommendation": 46827
+    },
+    {
+        "Style": "Country & Clean",
+        "Use": "Fender/Clean Amps",
+        "Want": "Vintage Tones",
+        "Recommendation": 54838
+    },
+    {
+        "Style": "Country & Clean",
+        "Use": "Marshall/British",
+        "Want": "Smooth Overdrive",
+        "Recommendation": 38965
+    },
+    {
+        "Style": "Country & Clean",
+        "Use": "Marshall/British",
+        "Want": "Heavy Distortion",
+        "Recommendation": 237
+    },
+    {
+        "Style": "Country & Clean",
+        "Use": "Marshall/British",
+        "Want": "Clean Boost",
+        "Recommendation": 240
+    },
+    {
+        "Style": "Country & Clean",
+        "Use": "Marshall/British",
+        "Want": "Vintage Tones",
+        "Recommendation": 56018
+    },
+    {
+        "Style": "Country & Clean",
+        "Use": "Vox AC30",
+        "Want": "Smooth Overdrive",
+        "Recommendation": 241
+    },
+    {
+        "Style": "Country & Clean",
+        "Use": "Vox AC30",
+        "Want": "Heavy Distortion",
+        "Recommendation": 36996
+    },
+    {
+        "Style": "Country & Clean",
+        "Use": "Vox AC30",
+        "Want": "Clean Boost",
+        "Recommendation": 240
+    },
+    {
+        "Style": "Country & Clean",
+        "Use": "Vox AC30",
+        "Want": "Vintage Tones",
+        "Recommendation": 244
+    },
+    {
+        "Style": "Country & Clean",
+        "Use": "Modern High-Gain",
+        "Want": "Smooth Overdrive",
+        "Recommendation": 40065
+    },
+    {
+        "Style": "Country & Clean",
+        "Use": "Modern High-Gain",
+        "Want": "Heavy Distortion",
+        "Recommendation": 40064
+    },
+    {
+        "Style": "Country & Clean",
+        "Use": "Modern High-Gain",
+        "Want": "Clean Boost",
+        "Recommendation": 38965
+    },
+    {
+        "Style": "Country & Clean",
+        "Use": "Modern High-Gain",
+        "Want": "Vintage Tones",
+        "Recommendation": 54838
+    }
+]

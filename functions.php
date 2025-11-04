@@ -107,4 +107,12 @@ function stockWarning() {
 //     return render_product_recommendation();
 // }
 // add_shortcode( 'productRecommendation', 'productRecommendation_shortcode' );
+
+// KEYZY LICENSE INCLUDE
+$keyzy_enqueue = get_theme_file_path( '/includes/keyzy/keyzy.php' );
+if ( file_exists( $keyzy_enqueue ) ) {
+    require_once $keyzy_enqueue;
+} else {
+    error_log( 'Missing include: ' . $keyzy_enqueue );
+}
 ?>

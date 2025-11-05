@@ -1,0 +1,95 @@
+// Impoort variables
+@use 'variables' as *;
+
+#keyzy-licenses-list {
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    background-color: $grey-color;
+    border-radius: 1.5rem;
+    margin: 1rem 0 2rem 0;
+    max-width: 960px;
+    .keyzy-license {
+        background-color: $white-color;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+        padding: 20px;
+        border-radius: 1.3rem;
+        border: 0.15rem solid $tertiary-color;
+        overflow-x: auto;
+        h3 {
+            font-size: 1.4rem !important;
+            color: inherit;
+            font-weight: 400;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0;
+            strong {
+                font-weight: 600;
+                background: $secondary-color;
+                padding: 0.2rem 1rem;
+                border-radius: 10rem;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+        }
+        small {
+            font-size: 1rem;
+            flex: 0 0 auto;
+            span {
+                text-transform: uppercase;
+            }
+            &.sku {
+                background-color: $grey-color;
+                padding: 0.075rem 0.8rem;
+                border-radius: 10rem;
+                span {
+                    font-weight: 500;
+                    color: $tertiary-color-drk;
+                }
+            }
+        }
+        .activation-state {
+            flex: 0 0 auto;
+            // margin-right: 0;
+            // margin-left: auto;
+            padding: 0.1rem 0.9rem;
+            color: $tertiary-color-drk;
+            font-weight: 500;
+            font-size: 1.1rem;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 0.4rem;
+            .count {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 1.6rem;
+                height: 1.6rem;
+                border-radius: 50%;
+                background-color: $secondary-color;
+                color: $tertiary-color-drk;
+                font-weight: 600;
+                line-height: 1;
+                font-size: 1.05rem;
+                padding: 0;
+                &.zero {
+                    background-color: $primary-color;
+                    color: $white-color;
+                }
+            }
+        }
+        details {
+            flex: 100% 0 1;
+        }
+    }
+}

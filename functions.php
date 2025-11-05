@@ -7,6 +7,14 @@ function custom_theme_scripts() {
         array( $parent_handle ),
         filemtime( get_stylesheet_directory() . '/css/stylesheet.css' )
     );
+    if ( class_exists('WooCommerce') && strpos($_SERVER['REQUEST_URI'], 'keyzy-licenses') !== false ) {
+        wp_enqueue_style(
+            'keyzy-style',
+            get_stylesheet_directory_uri() . '/css/keyzy.css',
+            array( 'child-style' ),
+            filemtime( get_stylesheet_directory() . '/css/keyzy.css' )
+        );
+    }
     wp_enqueue_script(
         'list-js',
         get_stylesheet_directory_uri() . '/js/lib/list.min.js',
@@ -109,6 +117,7 @@ function stockWarning() {
 // add_shortcode( 'productRecommendation', 'productRecommendation_shortcode' );
 
 // KEYZY LICENSE INCLUDE
+require_once get_stylesheet_directory() . '/includes/keyzy/keyzy-deactivate.php';
 $keyzy_enqueue = get_theme_file_path( '/includes/keyzy/keyzy.php' );
 if ( file_exists( $keyzy_enqueue ) ) {
     require_once $keyzy_enqueue;

@@ -63,18 +63,18 @@ function keyzy_display_activations($serial, $api_key, $app_id) {
             <details name="activations" aria-label="Activation details for <?php echo esc_html(!empty($activation['device_tag']) ? $activation['device_tag'] : 'Unknown Device'); ?>">
                 <summary>
                     <strong><?php echo esc_html(!empty($activation['device_tag']) ? $activation['device_tag'] : 'Unknown Device'); ?></strong>
-                    <?php echo $date_formatted ? ' (on: ' . esc_html($date_formatted) . ')' : ''; ?>
+                    <?php echo $date_formatted ? ' <small>(on: ' . esc_html($date_formatted) . ')</small>' : ''; ?>
                 </summary>
-                <small class="host-id"><?php echo esc_html(!empty($activation['host_id']) ? 'Host ID: ' . $activation['host_id'] : 'Host ID: Unknown'); ?></small>
-                <button 
-                    class="deactivate-license-btn" 
-                    data-activation-id="<?php echo esc_attr($activation['id']); ?>"
-                >
-                    Deactivate License
-                </button>
-                <span class="deactivate-confirm" style="display:none;">
-                    <button class="confirm-deactivate-btn" data-activation-id="<?php echo esc_attr($activation['id']); ?>">Confirm Deactivation</button>
-                </span>
+                <div class="content">
+                    <small class="license-version">Version: <strong><?php echo esc_html(!empty($activation['product_name']) ? $activation['product_name'] : 'Unknown'); ?></strong></small>
+                    <small class="host-id">Host ID: <strong><?php echo esc_html(!empty($activation['host_id']) ? $activation['host_id'] : 'Unknown'); ?></strong></small>
+                    <div class="btns-wrapper">
+                        <button class="deactivate-license-btn" data-activation-id="<?php echo esc_attr($activation['id']); ?>">
+                            Deactivate License
+                        </button>
+                        <button class="confirm-deactivate-btn" data-activation-id="<?php echo esc_attr($activation['id']); ?>" style="display:none;">Confirm Deactivation</button>
+                    </div>
+                </div>
             </details>
         <?php endforeach;
         
@@ -88,19 +88,30 @@ function keyzy_display_activations($serial, $api_key, $app_id) {
     
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Handle deactivate button clicks
-        document.querySelectorAll('.deactivate-license-btn').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                // Reveal confirmation button
-                btn.style.display = 'none';
-                btn.nextElementSibling.style.display = 'inline';
+        // Handle deactivate and confirm buttons
+        // Select all deactivate-license-btn button wrappers
+        document.querySelectorAll('.btns-wrapper').forEach(function(wrapper) {
+            // Select the deactivate and confirm buttons
+            const deactivateBtn = wrapper.querySelector('.deactivate-license-btn');
+            const confirmBtn = wrapper.querySelector('.confirm-deactivate-btn');
+            // Set up confimred state
+            let confirmed = false;
+            // Deactivate button click handler
+            deactivateBtn.addEventListener('click', function() {
+                if (confirmed) return;
+                deactivateBtn.style.display = 'none';
+                confirmBtn.style.display = 'inline';
+                setTimeout(function() {
+                    if (!confirmed) {
+                        deactivateBtn.style.display = 'inline';
+                        confirmBtn.style.display = 'none';
+                    }
+                }, 7000);
             });
-        });
-        // Handle confirm deactivate button clicks and AJAX request
-        document.querySelectorAll('.confirm-deactivate-btn').forEach(function(confirmBtn) {
+            // Confirm button click handler
             confirmBtn.addEventListener('click', function() {
+                confirmed = true;
                 var activationId = confirmBtn.getAttribute('data-activation-id');
-                // AJAX request to PHP handler
                 fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
                     method: 'POST',
                     credentials: 'same-origin',
@@ -109,6 +120,7 @@ function keyzy_display_activations($serial, $api_key, $app_id) {
                 })
                 .then(response => response.json())
                 .then(data => {
+                    confirmBtn.textContent = 'Deactivating...';
                     if (data.success) {
                         confirmBtn.textContent = 'Deactivated!';
                         confirmBtn.disabled = true;
@@ -121,7 +133,6 @@ function keyzy_display_activations($serial, $api_key, $app_id) {
                         confirmBtn.textContent = 'Error! Try Again';
                         confirmBtn.classList.add('error');
                         confirmBtn.classList.remove('deactivated');
-                        // Allow retry after 2 seconds
                         setTimeout(function() {
                             confirmBtn.textContent = 'Deactivate License';
                             confirmBtn.disabled = false;
@@ -129,6 +140,7 @@ function keyzy_display_activations($serial, $api_key, $app_id) {
                             confirmBtn.removeAttribute('tabindex');
                             confirmBtn.style.pointerEvents = '';
                             confirmBtn.classList.remove('error');
+                            confirmed = false;
                         }, 4000);
                     }
                 });

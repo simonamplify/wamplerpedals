@@ -35,12 +35,15 @@ if ( class_exists( 'WooCommerce' ) ) :
 
         // Get the shortcode HTML
         $shortcode_html = do_shortcode('[keyzy-downloads]');
+
         // Create an array to hold product serials
         $product_serials = [];
         libxml_use_internal_errors(true); // Suppress HTML warnings
+
         // Parse the HTML
         $dom = new DOMDocument();
         $dom->loadHTML($shortcode_html);
+
         // Find all <b> elements and extract serial numbers
         foreach ($dom->getElementsByTagName('b') as $b) :
             if (strpos($b->nodeValue, 'Product Serial') !== false) :
@@ -50,13 +53,16 @@ if ( class_exists( 'WooCommerce' ) ) :
                 endif;
             endif;
         endforeach;
-        // $product_serials = ['M0W8-TCSU-FN07-ZKID-KQKA', 'KUUQ-MEUB-UJEM-JEE7-PZTY'];
 
+        // Check if any serials were found and display messages
         if (empty($product_serials)) :
-            echo '<p>No product serials found.</p>';
+            echo '<div class="keyzy-licenses-info"><h2>Your Product Licenses</h2>';
+            echo '<p>No product serials found.</p></div>';
             return;
         else :
-            echo '<h2>Your Product Licenses</h2>';
+            echo '<div class="keyzy-licenses-info"><h2>Your Product Licenses</h2>';
+            echo '<p>Below are the licenses associated with your account. You can deactivate a license from a device by clicking the "Deactivate" button. This will disconnect the license from its current device, allowing you to activate it on a different device.</p>';
+            echo '<p>You can download the latest versions of your purchased plugins from the <a href="/account/downloads/">Download Area</a> in your account. They are also available on their respective product pages.</p></div>';
         endif;
 
         echo '<div id="keyzy-licenses-list" role="region" aria-label="Your Product Licenses">';

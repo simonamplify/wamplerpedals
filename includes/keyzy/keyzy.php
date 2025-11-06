@@ -61,7 +61,7 @@ if ( class_exists( 'WooCommerce' ) ) :
             return;
         else :
             echo '<div class="keyzy-licenses-info"><h2>Your Product Licenses</h2>';
-            echo '<p>Below are the licenses associated with your account. You can deactivate a license from a device by clicking the "Deactivate" button. This will disconnect the license from its current device, allowing you to activate it on a different device.</p>';
+            echo '<p>Below are the Product License Keys associated with your account. You can deactivate a license from a device by clicking the "Deactivate" button and confirming deactivation. This will disconnect the license from its current device, allowing you to activate it on a different device.</p>';
             echo '<p>You can download the latest versions of your purchased plugins from the <a href="/account/downloads/">Download Area</a> in your account. They are also available on their respective product pages.</p></div>';
         endif;
 

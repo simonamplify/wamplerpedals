@@ -1,3 +1,7 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'et_pb_button' as *;
+
 /* SIDE CART */
 .xoo-wsc-modal {
     .xoo-wsc-container {

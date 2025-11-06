@@ -1,35 +1,41 @@
-&.woocommerce-checkout {
-    input[type="checkbox"]#ship-to-different-address-checkbox {
-        @include switch();
-    }
-    .woocommerce-form-login {
-        .woocommerce-form-login__submit {
-            @include drkBtn();
-            font-size: 1.1rem !important;
+@use 'et_pb_button' as *;
+@use 'mixins' as *;
+@use 'typography' as *;
+
+.woocommerce-page {
+    &.woocommerce-checkout {
+        input[type='checkbox']#ship-to-different-address-checkbox {
+            @include switch();
         }
-    }
-    .checkout_coupon {
-        .button[name="apply_coupon"] {
-            margin-top: 0 !important;
-            @include drkBtn();
-            font-size: 1.1rem !important;
+        .woocommerce-form-login {
+            .woocommerce-form-login__submit {
+                @include drkBtn();
+                font-size: 1.1rem !important;
+            }
         }
-    }
-    #order_review {
-        #shipping_method {
-            padding: 0;
-            li {
-                margin: 0;
-                label {
-                    font-size: 0.9rem;
+        .checkout_coupon {
+            .button[name='apply_coupon'] {
+                margin-top: 0 !important;
+                @include drkBtn();
+                font-size: 1.1rem !important;
+            }
+        }
+        #order_review {
+            #shipping_method {
+                padding: 0;
+                li {
+                    margin: 0;
+                    label {
+                        font-size: 0.9rem;
+                    }
                 }
             }
         }
-    }
-    .et_pb_wc_checkout_payment_info {
-        #payment {
-            ul.wc_payment_methods {
-                padding: 0 !important;
+        .et_pb_wc_checkout_payment_info {
+            #payment {
+                ul.wc_payment_methods {
+                    padding: 0 !important;
+                }
             }
         }
     }

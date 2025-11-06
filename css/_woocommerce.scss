@@ -1,14 +1,16 @@
-@import "et_pb_button";
-.woocommerce-page {
-    @import "woo_typography";
-    @import "woo_buttons";
-    @import "woo_product_loop";
-    @import "woo_product";
-    @import "woo_cart";
-    @import "woo_checkout";
-    @import "woo_account";
-}
-@import "woo_side_cart";
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'typography' as *;
+@use 'et_pb_button' as *;
+@use 'woo_typography' as *;
+@use 'woo_buttons' as *;
+@use 'woo_product_loop' as *;
+@use 'woo_product' as *;
+@use 'woo_cart' as *;
+@use 'woo_checkout' as *;
+@use 'woo_account' as *;
+@use 'woo_side_cart' as *;
+
 // Add white background to woo gallery lightbox for pngs
 .pswp {
     .pswp__img {

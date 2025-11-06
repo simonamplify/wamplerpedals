@@ -69,10 +69,10 @@ function keyzy_display_activations($serial, $api_key, $app_id) {
                     <small class="license-version">Version: <strong><?php echo esc_html(!empty($activation['product_name']) ? $activation['product_name'] : 'Unknown'); ?></strong></small>
                     <small class="host-id">Host ID: <strong><?php echo esc_html(!empty($activation['host_id']) ? $activation['host_id'] : 'Unknown'); ?></strong></small>
                     <div class="btns-wrapper">
-                        <button class="deactivate-license-btn" data-activation-id="<?php echo esc_attr($activation['id']); ?>">
+                        <button class="deactivate-license-btn button drkBtn" data-activation-id="<?php echo esc_attr($activation['id']); ?>">
                             Deactivate License
                         </button>
-                        <button class="confirm-deactivate-btn" data-activation-id="<?php echo esc_attr($activation['id']); ?>" style="display:none;">Confirm Deactivation</button>
+                        <button class="confirm-deactivate-btn button orangeBtn" data-activation-id="<?php echo esc_attr($activation['id']); ?>" style="display:none;">Confirm Deactivation</button>
                     </div>
                 </div>
             </details>
@@ -111,6 +111,7 @@ function keyzy_display_activations($serial, $api_key, $app_id) {
             // Confirm button click handler
             confirmBtn.addEventListener('click', function() {
                 confirmed = true;
+                confirmBtn.textContent = 'Deactivating...';
                 var activationId = confirmBtn.getAttribute('data-activation-id');
                 fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
                     method: 'POST',
@@ -120,26 +121,30 @@ function keyzy_display_activations($serial, $api_key, $app_id) {
                 })
                 .then(response => response.json())
                 .then(data => {
-                    confirmBtn.textContent = 'Deactivating...';
                     if (data.success) {
+                        confirmBtn.classList.remove('orangeBtn');
+                        confirmBtn.classList.remove('warningBtn');
+                        confirmBtn.classList.add('drkBtn');
+                        confirmBtn.classList.add('deactivated');
                         confirmBtn.textContent = 'Deactivated!';
                         confirmBtn.disabled = true;
-                        confirmBtn.setAttribute('inert', '');
                         confirmBtn.setAttribute('tabindex', '-1');
-                        confirmBtn.style.pointerEvents = 'none';
-                        confirmBtn.classList.add('deactivated');
-                        confirmBtn.classList.remove('error');
+                        confirmBtn.style.cursor = 'not-allowed';
+                        confirmBtn.style.opacity = '0.7';
                     } else {
                         confirmBtn.textContent = 'Error! Try Again';
-                        confirmBtn.classList.add('error');
-                        confirmBtn.classList.remove('deactivated');
+                        confirmBtn.classList.remove('drkBtn');
+                        confirmBtn.classList.remove('orangeBtn');
+                        confirmBtn.classList.add('warningBtn');
                         setTimeout(function() {
-                            confirmBtn.textContent = 'Deactivate License';
+                            confirmBtn.classList.remove('warningBtn');
+                            confirmBtn.classList.remove('drkBtn');
+                            confirmBtn.classList.add('orangeBtn');
+                            confirmBtn.textContent = 'Confirm Deactivation';
                             confirmBtn.disabled = false;
                             confirmBtn.removeAttribute('inert');
                             confirmBtn.removeAttribute('tabindex');
                             confirmBtn.style.pointerEvents = '';
-                            confirmBtn.classList.remove('error');
                             confirmed = false;
                         }, 4000);
                     }

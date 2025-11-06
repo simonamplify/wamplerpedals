@@ -1,11 +1,16 @@
-footer {
-    .et_pb_text.footerHeader {
-        border-bottom: 0.1rem solid $secondary-color;
-        h4 {
-            font-size: $fs-md;
+@use 'variables' as *;
+@use 'typography' as *;
+
+#et-main-area {
+    footer {
+        .et_pb_text.footerHeader {
+            border-bottom: 0.1rem solid $secondary-color;
+            h4 {
+                font-size: $fs-md;
+            }
         }
-    }
-    .widget_nav_menu {
-        margin-bottom: 0;
+        .widget_nav_menu {
+            margin-bottom: 0;
+        }
     }
 }

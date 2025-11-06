@@ -1,3 +1,6 @@
+@use 'variables' as *;
+@use 'typography' as *;
+
 @mixin button {
     display: inline-block;
     position: relative;
@@ -19,7 +22,7 @@
     cursor: pointer;
     &::after {
         font-family: inherit !important;
-        content: "";
+        content: '';
         display: block !important;
         opacity: 0;
         position: absolute;
@@ -141,6 +144,27 @@
         text-shadow: none;
     }
 }
+@mixin warningBtn {
+    background-color: $error-color-drk !important;
+    color: $white-color !important;
+    border-color: $error-color-drk !important;
+    &::after {
+        border-color: $error-color-drk !important;
+    }
+    &:hover {
+        background-color: $error-color-drk !important;
+        color: $white-color !important;
+        box-shadow: 0 0 0.5em
+            color-mix(in srgb, $error-color-drk 20%, transparent 80%) !important;
+    }
+    &:active {
+        background-color: color-mix(
+            in srgb,
+            $error-color-drk 80%,
+            #000000 20%
+        ) !important;
+    }
+}
 body {
     #page-container {
         #et-main-area {
@@ -167,6 +191,9 @@ body {
                     &.glassBtn {
                         @include glassBtn();
                     }
+                    &.warningBtn {
+                        @include warningBtn();
+                    }
                 }
                 .orangeBtn {
                     @include orangeBtn();
@@ -179,6 +206,9 @@ body {
                 }
                 .glassBtn {
                     @include glassBtn();
+                }
+                .warningBtn {
+                    @include warningBtn();
                 }
             }
         }

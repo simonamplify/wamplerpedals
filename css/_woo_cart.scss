@@ -1,60 +1,65 @@
-.woocommerce-cart-form {
-    .product-remove {
-        a {
-            font-size: 1.2em;
-            line-height: 1.2rem;
-            height: 1.5rem;
-            width: 1.5rem;
+@use 'variables' as *;
+@use 'et_pb_button' as *;
+
+.woocommerce-page {
+    .woocommerce-cart-form {
+        .product-remove {
+            a {
+                font-size: 1.2em;
+                line-height: 1.2rem;
+                height: 1.5rem;
+                width: 1.5rem;
+            }
         }
-    }
-    .product-subtotal {
-        font-weight: 500;
-    }
-    .coupon {
-        margin-bottom: 0.5em;
-        #coupon_code {
-            margin-right: 1em;
-            width: auto !important;
-            min-width: 150px;
-            @media (max-width: $screen-md) {
-                margin-right: 10px;
-            }
-            @media (max-width: $screen-sm) {
-                margin-right: 0;
-                width: 100% !important;
-                margin-bottom: 0.75em !important;
-                background-color: $white-color !important;
-            }
-            + .button {
-                width: fit-content;
-                &[name="apply_coupon"] {
-                    @include drkBtn();
+        .product-subtotal {
+            font-weight: 500;
+        }
+        .coupon {
+            margin-bottom: 0.5em;
+            #coupon_code {
+                margin-right: 1em;
+                width: auto !important;
+                min-width: 150px;
+                @media (max-width: $screen-md) {
+                    margin-right: 10px;
                 }
                 @media (max-width: $screen-sm) {
-                    float: left;
+                    margin-right: 0;
+                    width: 100% !important;
+                    margin-bottom: 0.75em !important;
+                    background-color: $white-color !important;
+                }
+                + .button {
+                    width: fit-content;
+                    &[name='apply_coupon'] {
+                        @include drkBtn();
+                    }
+                    @media (max-width: $screen-sm) {
+                        float: left;
+                    }
                 }
             }
         }
-    }
-    .button {
-        font-size: 1.1rem !important;
-    }
-}
-.cart_totals {
-    .cart-subtotal {
-        font-weight: 500;
-    }
-    .woocommerce-shipping-totals {
-        .shipping-calculator-form {
-            margin-top: 0.5em;
-        }
-        .select2-selection {
-            background-color: $white-color !important;
+        .button {
+            font-size: 1.1rem !important;
         }
     }
-    .button[name="calc_shipping"] {
-        @include drkBtn();
-        font-size: 1.1rem !important;
-        margin: 0.5em 0;
+    .cart_totals {
+        .cart-subtotal {
+            font-weight: 500;
+        }
+        .woocommerce-shipping-totals {
+            .shipping-calculator-form {
+                margin-top: 0.5em;
+            }
+            .select2-selection {
+                background-color: $white-color !important;
+            }
+        }
+        .button[name='calc_shipping'] {
+            @include drkBtn();
+            font-size: 1.1rem !important;
+            margin: 0.5em 0;
+        }
     }
 }

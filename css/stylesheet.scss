@@ -1,48 +1,41 @@
-////////////////////////////////////////////
-// Variables & mixins
-////////////////////////////////////////////
-@import 'variables';
-@import 'mixins';
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'typography' as *;
+@use 'utilities' as *;
+@use 'layouts' as *;
+@use 'material_icons' as *;
+@use 'et_pb_button' as *;
+@use 'header' as *;
+@use 'et_pb_text' as *;
+@use 'et_pb_newsletter' as *;
+@use 'et_pb_contact' as *;
+@use 'et_pb_video_slider' as *;
+@use 'anything_slider' as *;
+@use 'parallax_hero' as *;
+@use 'inputs' as *;
+@use 'gravity_forms' as *;
+@use 'comments' as *;
+@use 'blog' as *;
+@use 'dropdown_menu' as *;
+@use 'artists' as *;
+@use 'downloads' as *;
+@use 'wp-pagenavi' as *;
+@use 'product_recommendation' as *;
+@use 'footer' as *;
+@use 'berocket_filters' as *;
+@use 'single_post' as *;
+@use 'fibo_search' as *;
+@use 'mapsvg' as *;
+@use 'woocommerce' as *;
+@use 'et_pb_scroll_top' as *;
+@use 'pop_up_maker' as *;
 
-/* ===========================
-STYLES
-=========================== */
-@import 'typography';
-@import 'utilities';
-@import 'layouts';
+// Then your CSS rules
 body {
-    @import 'material_icons';
-    @import 'et_pb_button';
     #page-container {
-        @import 'header';
         animation: fade100 1.5s;
-        #et-main-area {
-            @import 'et_pb_text';
-            @import 'et_pb_newsletter';
-            @import 'et_pb_contact';
-            @import 'et_pb_video_slider';
-            @import 'anything_slider';
-            @import 'parallax_hero';
-            @import 'inputs';
-            @import 'gravity_forms';
-            @import 'comments';
-            @import 'blog';
-            @import 'dropdown_menu';
-            @import 'artists';
-            @import 'downloads';
-            @import 'wp-pagenavi';
-            @import 'product_recommendation';
-            @import 'footer';
-        }
-        @import 'berocket_filters';
     }
-    @import 'single_post';
-    @import 'fibo_search';
-    @import 'mapsvg';
 }
-@import 'woocommerce';
-@import 'et_pb_scroll_top';
-@import 'pop_up_maker';
 .grecaptcha-badge {
     visibility: hidden !important;
 }

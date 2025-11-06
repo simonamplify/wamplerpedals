@@ -1,43 +1,48 @@
-#main-content {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: $header-font;
-        font-weight: bold;
-        line-height: $h-lh !important;
-        color: $header-color;
-        &::selection {
-            color: $white-color;
-            -webkit-text-fill-color: $white-color;
-            background-color: $primary-color;
+@use 'variables' as *;
+@use 'typography' as *;
+
+.woocommerce-page {
+    #main-content {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: $header-font;
+            font-weight: bold;
+            line-height: $h-lh !important;
+            color: $header-color;
+            &::selection {
+                color: $white-color;
+                -webkit-text-fill-color: $white-color;
+                background-color: $primary-color;
+            }
         }
-    }
-    h1 {
-        font-size: $fs-xl !important;
-    }
-    h2 {
-        font-size: $fs-lg !important;
-    }
-    h3 {
-        font-size: $fs-md !important;
-        &#ship-to-different-address {
+        h1 {
+            font-size: $fs-xl !important;
+        }
+        h2 {
+            font-size: $fs-lg !important;
+        }
+        h3 {
+            font-size: $fs-md !important;
+            &#ship-to-different-address {
+                font-size: $fs-std !important;
+            }
+        }
+        h4,
+        h5,
+        h6 {
             font-size: $fs-std !important;
         }
-    }
-    h4,
-    h5,
-    h6 {
-        font-size: $fs-std !important;
-    }
-    .heroHeader {
-        h1 {
-            font-size: $fs-xxl !important;
+        .heroHeader {
+            h1 {
+                font-size: $fs-xxl !important;
+            }
         }
-    }
-    strong {
-        font-weight: 500;
+        strong {
+            font-weight: 500;
+        }
     }
 }

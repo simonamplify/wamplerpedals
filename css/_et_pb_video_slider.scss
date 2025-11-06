@@ -1,68 +1,71 @@
-.et_pb_video_slider {
-    .et_pb_carousel {
-        margin-top: 50px;
-        .et_pb_carousel_items {
-            .et-carousel-group {
-                .et_pb_carousel_item {
-                    .et_pb_video_overlay {
-                        .et_pb_video_overlay_hover {
-                            .et_pb_video_play {
-                                font-size: 2rem;
-                                @include absCenter();
-                                margin: 0;
-                                transition: color 0.1s linear,
-                                    opacity 0.1s linear !important;
-                                &::before {
+@use 'mixins' as *;
+#et-main-area {
+    .et_pb_video_slider {
+        .et_pb_carousel {
+            margin-top: 50px;
+            .et_pb_carousel_items {
+                .et-carousel-group {
+                    .et_pb_carousel_item {
+                        .et_pb_video_overlay {
+                            .et_pb_video_overlay_hover {
+                                .et_pb_video_play {
+                                    font-size: 2rem;
+                                    @include absCenter();
+                                    margin: 0;
                                     transition: color 0.1s linear,
-                                        opacity 0.1s linear;
+                                        opacity 0.1s linear !important;
+                                    &::before {
+                                        transition: color 0.1s linear,
+                                            opacity 0.1s linear;
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
-            .et-pb-slider-arrows {
-                .et-pb-slider-arrow {
-                    top: 40%;
+                .et-pb-slider-arrows {
+                    .et-pb-slider-arrow {
+                        top: 40%;
+                    }
                 }
             }
         }
-    }
-    &.sideCarousel {
-        @media (min-width: 768px) {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            gap: 5%;
-            .et_pb_slider {
-                width: 85%;
-                float: left;
-            }
-            .et_pb_carousel {
-                width: 10%;
-                float: right;
-                margin: 0;
-                padding: 0;
-                .et_pb_carousel_items {
-                    height: 100% !important;
-                    .et-pb-slider-arrows {
-                        display: none !important;
-                        visibility: hidden !important;
-                    }
-                    .et-carousel-group {
-                        display: flex;
-                        flex-direction: column;
-                        flex-wrap: nowrap;
-                        height: 100%;
-                        gap: 10px;
-                        .et_pb_carousel_item {
-                            width: 100%;
-                            .et_pb_video_overlay {
-                                .et_pb_video_overlay_hover {
-                                    .et_pb_video_play {
-                                        font-size: 1.5rem;
-                                        @include absCenter();
-                                        margin: 0;
+        &.sideCarousel {
+            @media (min-width: 768px) {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                gap: 5%;
+                .et_pb_slider {
+                    width: 85%;
+                    float: left;
+                }
+                .et_pb_carousel {
+                    width: 10%;
+                    float: right;
+                    margin: 0;
+                    padding: 0;
+                    .et_pb_carousel_items {
+                        height: 100% !important;
+                        .et-pb-slider-arrows {
+                            display: none !important;
+                            visibility: hidden !important;
+                        }
+                        .et-carousel-group {
+                            display: flex;
+                            flex-direction: column;
+                            flex-wrap: nowrap;
+                            height: 100%;
+                            gap: 10px;
+                            .et_pb_carousel_item {
+                                width: 100%;
+                                .et_pb_video_overlay {
+                                    .et_pb_video_overlay_hover {
+                                        .et_pb_video_play {
+                                            font-size: 1.5rem;
+                                            @include absCenter();
+                                            margin: 0;
+                                        }
                                     }
                                 }
                             }

@@ -1,18 +1,23 @@
-#comment-wrap {
-    .commentlist {
-        .comment {
-            padding: 0;
-            &::marker {
-                content: none !important;
-            }
-            p {
-                overflow-x: clip;
-            }
-            .reply-container {
-                .comment-reply-link {
-                    @include drkBtn();
-                    font-size: $fs-xs !important;
-                    margin-top: 1em;
+@use 'typography' as *;
+@use 'et_pb_button' as *;
+
+#et-main-area {
+    #comment-wrap {
+        .commentlist {
+            .comment {
+                padding: 0;
+                &::marker {
+                    content: none !important;
+                }
+                p {
+                    overflow-x: clip;
+                }
+                .reply-container {
+                    .comment-reply-link {
+                        @include drkBtn();
+                        font-size: $fs-xs !important;
+                        margin-top: 1em;
+                    }
                 }
             }
         }

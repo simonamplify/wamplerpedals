@@ -1,4 +1,6 @@
-$header-font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
+@use 'variables' as *;
+
+$header-font: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans',
     Arial, sans-serif;
 $body-font: system-ui, sans-serif;
 $fs-xxl: clamp(3rem, 4vw + 1rem, 4rem);
@@ -146,21 +148,21 @@ span::selection {
         > li {
             counter-increment: lv1Style;
             &::marker {
-                content: "[" counter(lv1Style, list-item) "] ";
+                content: '[' counter(lv1Style, list-item) '] ';
             }
             > ol {
                 counter-reset: lv2Style;
                 > li {
                     counter-increment: lv2Style;
                     &::marker {
-                        content: "[" counter(lv2Style, lower-alpha) "] ";
+                        content: '[' counter(lv2Style, lower-alpha) '] ';
                     }
                     > ol {
                         counter-reset: lv3Style;
                         > li {
                             counter-increment: lv3Style;
                             &::marker {
-                                content: "[" counter(lv3Style, lower-roman) "] ";
+                                content: '[' counter(lv3Style, lower-roman) '] ';
                             }
                         }
                     }

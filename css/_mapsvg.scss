@@ -1,134 +1,95 @@
-#mapsvg-map-5456 {
-    @media (max-width: 768px) {
-        border-radius: 0.5em;
-        overflow: clip;
-    }
-    .mapsvg-header {
-        .mapsvg-filters-wrap {
-            margin-bottom: 5px;
-            .mapsvg-controller-view {
-                .mapsvg-controller-view-wrap {
-                    .mapsvg-controller-view-content {
-                        .mapsvg-form-builder {
-                            padding-bottom: 0;
-                            .mapsvg-data-form-view {
-                                .form-group:first-of-type {
-                                    flex-basis: 100% !important;
-                                    padding: 0 !important;
-                                    background-color: transparent !important;
-                                }
-                                .form-group {
-                                    max-height: none;
-                                    margin: 0;
-                                    .mapsvg-filter-label {
-                                        display: none;
-                                    }
-                                    .mapsvg-directory-search-wrap-margin {
-                                        max-width: $screen-max;
-                                        margin: auto;
-                                        background: $quaternary-color-lht;
-                                        padding: 1rem;
-                                        @include roundedCorners();
-                                        position: relative;
-                                        height: auto;
-                                        .mapsvg-directory-search {
-                                            position: relative;
-                                            padding: 0.5em 1em !important;
-                                            height: auto;
-                                            border-radius: 200px;
-                                            min-height: 0;
-                                            appearance: none;
-                                            display: block;
-                                            margin: auto;
-                                            border: solid 1px
-                                                $quaternary-color-lht;
-                                            width: 100%;
-                                            font-size: $fs-std !important;
-                                            font-family: $body-font !important;
-                                            font-weight: 400 !important;
-                                            line-height: $f-lh !important;
-                                            transition: border 0.2s linear;
-                                            color: $font-color;
-                                            &::-webkit-input-placeholder,
-                                            &:-ms-input-placeholder,
-                                            &::-ms-input-placeholder,
-                                            &::placeholder {
-                                                color: $font-color;
-                                                opacity: 0.7 !important;
-                                            }
-                                            &:focus,
-                                            &:active {
-                                                border-color: $quaternary-color-lht !important;
-                                            }
-                                        }
-                                    }
-                                    &.mapsvg-filters-reset-container {
-                                        margin: 0 0 0 20px;
-                                        align-self: center;
-                                        @media (max-width: 768px) {
-                                            width: 100%;
-                                            margin: 0 2em 0 0;
-                                            justify-content: flex-end;
-                                        }
-                                        .mapsvg-filters-reset {
-                                            background-color: transparent;
-                                            color: $primary-color;
-                                            padding: 0;
-                                            border: none;
-                                            &:hover,
-                                            &:active {
-                                                color: $primary-color;
-                                                background-color: transparent;
-                                                box-shadow: none;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .mapsvg-wrap {
-        margin-top: 2em !important;
-        @media (min-width: 767px) {
-            @include roundedCorners();
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'et_pb_button' as *;
+@use 'typography' as *;
+
+#page-container {
+    #mapsvg-map-5456 {
+        @media (max-width: 768px) {
+            border-radius: 0.5em;
             overflow: clip;
         }
-        @media (max-width: 768px) {
-            margin-top: 0 !important;
-        }
-        .mapsvg-sidebar {
-            .mapsvg-directory {
-                background-color: $quaternary-color-lht !important;
+        .mapsvg-header {
+            .mapsvg-filters-wrap {
+                margin-bottom: 5px;
                 .mapsvg-controller-view {
                     .mapsvg-controller-view-wrap {
                         .mapsvg-controller-view-content {
-                            .mapsvg-directory-item {
-                                font-size: $fs-sm;
-                                font-weight: 400;
-                                @include ease2();
-                                line-height: $f-lh;
-                                color: $tertiary-color;
-                                border-bottom: solid 1px
-                                    color-mix(
-                                        in srgb,
-                                        $quaternary-color-lht 80%,
-                                        $white-color 20%
-                                    );
-                                overflow: hidden;
-                                white-space: nowrap;
-                                text-overflow: ellipsis;
-                                @media (min-width: 767px) {
-                                    max-width: 250px;
-                                }
-                                &:hover,
-                                &.hover,
-                                &.selected {
-                                    background: $tertiary-color !important;
-                                    color: $white-color !important;
+                            .mapsvg-form-builder {
+                                padding-bottom: 0;
+                                .mapsvg-data-form-view {
+                                    .form-group:first-of-type {
+                                        flex-basis: 100% !important;
+                                        padding: 0 !important;
+                                        background-color: transparent !important;
+                                    }
+                                    .form-group {
+                                        max-height: none;
+                                        margin: 0;
+                                        .mapsvg-filter-label {
+                                            display: none;
+                                        }
+                                        .mapsvg-directory-search-wrap-margin {
+                                            max-width: $screen-max;
+                                            margin: auto;
+                                            background: $quaternary-color-lht;
+                                            padding: 1rem;
+                                            @include roundedCorners();
+                                            position: relative;
+                                            height: auto;
+                                            .mapsvg-directory-search {
+                                                position: relative;
+                                                padding: 0.5em 1em !important;
+                                                height: auto;
+                                                border-radius: 200px;
+                                                min-height: 0;
+                                                appearance: none;
+                                                display: block;
+                                                margin: auto;
+                                                border: solid 1px
+                                                    $quaternary-color-lht;
+                                                width: 100%;
+                                                font-size: $fs-std !important;
+                                                font-family: $body-font !important;
+                                                font-weight: 400 !important;
+                                                line-height: $f-lh !important;
+                                                transition: border 0.2s linear;
+                                                color: $font-color;
+                                                &::-webkit-input-placeholder,
+                                                &:-ms-input-placeholder,
+                                                &::-ms-input-placeholder,
+                                                &::placeholder {
+                                                    color: $font-color;
+                                                    opacity: 0.7 !important;
+                                                }
+                                                &:focus,
+                                                &:active {
+                                                    border-color: $quaternary-color-lht !important;
+                                                }
+                                            }
+                                        }
+                                        &.mapsvg-filters-reset-container {
+                                            margin: 0 0 0 20px;
+                                            align-self: center;
+                                            @media (max-width: 768px) {
+                                                width: 100%;
+                                                margin: 0 2em 0 0;
+                                                justify-content: flex-end;
+                                            }
+                                            .mapsvg-filters-reset {
+                                                background-color: transparent;
+                                                color: $primary-color;
+                                                padding: 0;
+                                                border: none;
+                                                &:hover,
+                                                &:active {
+                                                    color: $primary-color;
+                                                    background-color: transparent;
+                                                    box-shadow: none;
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -136,124 +97,161 @@
                 }
             }
         }
-        .mapsvg-map-container {
-            .mapsvg {
-                .mapsvg-tooltip {
-                    padding: 0.2em 0.5em !important;
-                    font-size: $fs-xs;
-                    font-weight: 400;
-                    line-height: $f-lh;
-                    border: transparent;
-                    background-color: $tertiary-color;
-                    color: $white-color;
-                    border-radius: 0.3em;
-                    white-space: nowrap;
-                    max-width: none !important;
-                    text-transform: none;
-                }
-                .mapsvg-layers-wrap {
-                    .mapsvg-marker {
-                        @include ease2();
-                    }
-                    .mapsvg-marker-cluster {
-                        background: $tertiary-color;
-                        color: $white-color;
-                        box-shadow: 0px 0px 0px 4px rgba(27, 40, 69, 0.2);
-                        border: none;
-                        width: 25px;
-                        line-height: 27px;
-                        height: 25px;
-                        @include ease2();
-                        text-transform: none;
-                        &:hover {
-                            color: $primary-color;
+        .mapsvg-wrap {
+            margin-top: 2em !important;
+            @media (min-width: 767px) {
+                @include roundedCorners();
+                overflow: clip;
+            }
+            @media (max-width: 768px) {
+                margin-top: 0 !important;
+            }
+            .mapsvg-sidebar {
+                .mapsvg-directory {
+                    background-color: $quaternary-color-lht !important;
+                    .mapsvg-controller-view {
+                        .mapsvg-controller-view-wrap {
+                            .mapsvg-controller-view-content {
+                                .mapsvg-directory-item {
+                                    font-size: $fs-sm;
+                                    font-weight: 400;
+                                    @include ease2();
+                                    line-height: $f-lh;
+                                    color: $tertiary-color;
+                                    border-bottom: solid 1px
+                                        color-mix(
+                                            in srgb,
+                                            $quaternary-color-lht 80%,
+                                            $white-color 20%
+                                        );
+                                    overflow: hidden;
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+                                    @media (min-width: 767px) {
+                                        max-width: 250px;
+                                    }
+                                    &:hover,
+                                    &.hover,
+                                    &.selected {
+                                        background: $tertiary-color !important;
+                                        color: $white-color !important;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
-        }
-        .mapsvg-details-container {
-            background: rgba(255, 255, 255, 0.97);
-            .mapsvg-controller-view {
-                .mapsvg-controller-view-toolbar {
-                    .mapsvg-popover-close.mapsvg-details-close {
-                        transform: scale(0.4);
-                        top: 10px;
-                        right: 10px;
-                        &:hover::after,
-                        &:hover::before {
-                            background: $primary-color;
-                            opacity: 1;
-                        }
-                    }
-                }
-            }
-            .mapsvg-controller-view-wrap {
-                .mapsvg-controller-view-content {
-                    padding: 10%;
-                    @media (max-width: 980px) {
-                        padding: 5%;
-                    }
-                    span {
-                        color: $primary-color;
-                    }
-                    a {
-                        &:hover {
-                            color: $primary-color;
-                        }
-                    }
-                    .name {
-                        margin-bottom: 0.5em;
-                    }
-                    .location,
-                    .phone,
-                    .email,
-                    .website {
-                        position: relative;
-                        padding-left: 2em;
-                        line-height: $f-lh;
-                        margin-bottom: 0.5em;
-                        color: $font-color;
+            .mapsvg-map-container {
+                .mapsvg {
+                    .mapsvg-tooltip {
+                        padding: 0.2em 0.5em !important;
+                        font-size: $fs-xs;
                         font-weight: 400;
+                        line-height: $f-lh;
+                        border: transparent;
+                        background-color: $tertiary-color;
+                        color: $white-color;
+                        border-radius: 0.3em;
+                        white-space: nowrap;
+                        max-width: none !important;
+                        text-transform: none;
+                    }
+                    .mapsvg-layers-wrap {
+                        .mapsvg-marker {
+                            @include ease2();
+                        }
+                        .mapsvg-marker-cluster {
+                            background: $tertiary-color;
+                            color: $white-color;
+                            box-shadow: 0px 0px 0px 4px rgba(27, 40, 69, 0.2);
+                            border: none;
+                            width: 25px;
+                            line-height: 27px;
+                            height: 25px;
+                            @include ease2();
+                            text-transform: none;
+                            &:hover {
+                                color: $primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+            .mapsvg-details-container {
+                background: rgba(255, 255, 255, 0.97);
+                .mapsvg-controller-view {
+                    .mapsvg-controller-view-toolbar {
+                        .mapsvg-popover-close.mapsvg-details-close {
+                            transform: scale(0.4);
+                            top: 10px;
+                            right: 10px;
+                            &:hover::after,
+                            &:hover::before {
+                                background: $primary-color;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+                .mapsvg-controller-view-wrap {
+                    .mapsvg-controller-view-content {
+                        padding: 10%;
+                        @media (max-width: 980px) {
+                            padding: 5%;
+                        }
                         span {
-                            font-size: $fs-std;
-                            position: absolute;
-                            left: 0;
-                            top: 0.4rem;
                             color: $primary-color;
                         }
                         a {
-                            color: $primary-color;
-                            transition: color 0.2s linear;
                             &:hover {
-                                color: $primary-color-drk;
+                                color: $primary-color;
+                            }
+                        }
+                        .name {
+                            margin-bottom: 0.5em;
+                        }
+                        .location,
+                        .phone,
+                        .email,
+                        .website {
+                            position: relative;
+                            padding-left: 2em;
+                            line-height: $f-lh;
+                            margin-bottom: 0.5em;
+                            color: $font-color;
+                            font-weight: 400;
+                            span {
+                                font-size: $fs-std;
+                                position: absolute;
+                                left: 0;
+                                top: 0.4rem;
+                                color: $primary-color;
+                            }
+                            a {
+                                color: $primary-color;
+                                transition: color 0.2s linear;
+                                &:hover {
+                                    color: $primary-color-drk;
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
-    .mapsvg-mobile-buttons {
-        background-color: $grey-color !important;
-        .mapsvg-button-menu,
-        .mapsvg-button-map {
-            border: solid 1px $grey-color;
-            @include ease2();
-            color: $tertiary-color;
-            font-weight: 400 !important;
-            .mapsvg-icon-menu {
-                border: none !important;
-            }
-            &.active {
-                background-color: $tertiary-color !important;
-                background: $tertiary-color !important;
-                color: $white-color !important;
+        .mapsvg-mobile-buttons {
+            background-color: $grey-color !important;
+            .mapsvg-button-menu,
+            .mapsvg-button-map {
+                border: solid 1px $grey-color;
+                @include ease2();
+                color: $tertiary-color;
+                font-weight: 400 !important;
                 .mapsvg-icon-menu {
                     border: none !important;
-                    color: $white-color !important;
                 }
-                &:hover {
+                &.active {
                     background-color: $tertiary-color !important;
                     background: $tertiary-color !important;
                     color: $white-color !important;
@@ -261,59 +259,68 @@
                         border: none !important;
                         color: $white-color !important;
                     }
+                    &:hover {
+                        background-color: $tertiary-color !important;
+                        background: $tertiary-color !important;
+                        color: $white-color !important;
+                        .mapsvg-icon-menu {
+                            border: none !important;
+                            color: $white-color !important;
+                        }
+                    }
                 }
-            }
-            &:hover {
-                background-color: $white-color !important;
-                background: $white-color !important;
-                color: $primary-color !important;
-                .mapsvg-icon-menu {
-                    border: none !important;
-                    color: $primary-color !important;
-                }
-            }
-        }
-    }
-}
-.mapsvg-details-container {
-    .mapsvg-controller-view-content {
-        padding: 10%;
-        font-size: $fs-std;
-        .name {
-            margin-bottom: 0.5em;
-        }
-        .location,
-        .phone,
-        .email,
-        .website {
-            position: relative;
-            padding-left: 2em;
-            line-height: $f-lh;
-            margin-bottom: 0.5em;
-            color: $font-color;
-            font-weight: 400;
-            span {
-                font-size: $fs-std;
-                position: absolute;
-                left: 0;
-                top: 0.4rem;
-                color: $primary-color;
-            }
-            a {
-                color: $primary-color;
-                transition: color 0.2s linear;
                 &:hover {
-                    color: $primary-color-drk;
+                    background-color: $white-color !important;
+                    background: $white-color !important;
+                    color: $primary-color !important;
+                    .mapsvg-icon-menu {
+                        border: none !important;
+                        color: $primary-color !important;
+                    }
                 }
             }
         }
     }
-    .mapsvg-mobile-modal-close {
-        @include button();
-        @include drkBtn();
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 2em;
+    .mapsvg-details-container {
+        .mapsvg-controller-view-content {
+            padding: 10%;
+            font-size: $fs-std;
+            .name {
+                margin-bottom: 0.5em;
+            }
+            .location,
+            .phone,
+            .email,
+            .website {
+                position: relative;
+                padding-left: 2em;
+                line-height: $f-lh;
+                margin-bottom: 0.5em;
+                color: $font-color;
+                font-weight: 400;
+                span {
+                    font-size: $fs-std;
+                    position: absolute;
+                    left: 0;
+                    top: 0.4rem;
+                    color: $primary-color;
+                }
+                a {
+                    color: $primary-color;
+                    transition: color 0.2s linear;
+                    &:hover {
+                        color: $primary-color-drk;
+                    }
+                }
+            }
+        }
+        .mapsvg-mobile-modal-close {
+            @include button();
+            @include drkBtn();
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 2em;
+        }
     }
 }

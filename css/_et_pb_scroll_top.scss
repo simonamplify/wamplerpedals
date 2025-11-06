@@ -1,3 +1,6 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
 .et_pb_scroll_top {
     border-radius: 0.2em !important;
     background: rgba(50, 230, 226, 0.7) !important;

@@ -1,11 +1,13 @@
-.et_pb_newsletter {
-    .et_pb_newsletter_form {
-        .et_pb_newsletter_result {
-            + .et_pb_newsletter_fields {
-                padding-top: 20px;
-            }
-            h2 {
-                font-size: 20px;
+#et-main-area {
+    .et_pb_newsletter {
+        .et_pb_newsletter_form {
+            .et_pb_newsletter_result {
+                + .et_pb_newsletter_fields {
+                    padding-top: 20px;
+                }
+                h2 {
+                    font-size: 20px;
+                }
             }
         }
     }

@@ -1,4 +1,8 @@
-&.single-product {
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'typography' as *;
+
+.woocommerce-page.single-product {
     .product {
         .woocommerce-breadcrumb {
             color: $tertiary-color-drk;
@@ -126,11 +130,11 @@
                         }
                     }
                     &:last-child {
-                        @include parallaxScroll200Y();
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         flex-direction: column;
+                        @include parallaxScroll200Y();
                         @media (max-width: $screen-md) {
                             order: 1;
                             .heroImg {

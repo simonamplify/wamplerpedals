@@ -1,3 +1,7 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'et_pb_button' as *;
+
 .pum-theme-lightbox {
     .pum-container {
         background: rgba(255, 255, 255, 0.1) !important;

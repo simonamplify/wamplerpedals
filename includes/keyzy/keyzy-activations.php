@@ -1,65 +1,63 @@
 <?php
+// Include Keyzy API functions
+require_once get_stylesheet_directory() . '/includes/keyzy/keyzy-api.php';
+
 // Function to display activations for a given product serial
-function keyzy_display_activations($serial, $api_key, $app_id) {
+function keyzy_display_activations($serial, $api_key, $app_id, $max_host_count) {
 
     // Validate inputs
-    if (!$serial || !$api_key || !$app_id) :
+    if (!$serial || !$api_key || !$app_id) {
         echo "<p>Missing serial, API key, or app ID.</p>";
         return;
-    endif;
+    }
 
     // Fetch activations from Keyzy API
-    $url = "https://api.keyzy.io/v2/activations/$serial?app_id=$app_id&api_key=$api_key";
-    $response = wp_remote_get($url, ['timeout' => 15]);
+    $data = keyzy_get_activations($serial, $app_id, $api_key);
 
     // Handle errors
-    if (is_wp_error($response)) :
+    if (is_wp_error($data)) {
         echo "<p>Error fetching activations for serial $serial</p>";
         return;
-    endif;
-
-    // Parse the response
-    $body = wp_remote_retrieve_body($response);
-    $data = json_decode($body, true);
+    }
 
     // Display activations
-    if (!empty($data['data']) && is_array($data['data'])) :
+    if (!empty($data['data']) && is_array($data['data'])) {
 
         // Count activations
         $activation_count = 0;
-        foreach ($data['data'] as $activation) :
-            if ($activation['activated'] == 1 ) :
+        foreach ($data['data'] as $activation) {
+            if ($activation['activated'] == 1 ) {
                 $activation_count++;
-            endif;
-        endforeach;
+            }
+        }
         $activation_state = 'No Activation data found.';
-        if ($activation_count === 0) :
-            $activation_state = '<span class="count zero">0</span> Activations';
-        elseif ($activation_count === 1) :
-            $activation_state = '<span class="count">' . $activation_count . '</span> Activation';    
-        else :
-            $activation_state = '<span class="count">' . $activation_count . '</span> Activations';
-        endif;
+        if ($activation_count === 0) {
+            $activation_state = '<span class="count zero">0</span> Activations (';
+        } elseif ($activation_count === 1) {
+            $activation_state = '<span class="count">' . $activation_count . '</span> Activation (';    
+        } else {
+            $activation_state = '<span class="count">' . $activation_count . '</span> Activations (';
+        }
         
         // Display activation state
-        echo '<div class="activation-state">' . $activation_state . '</div>';
+        echo '<div class="activation-state">' . $activation_state . esc_html($max_host_count) . ')</div>';
 
-        foreach ($data['data'] as $activation) :
+        foreach ($data['data'] as $activation) {
             // Skip non-activated entries
-            if ($activation['activated'] != 1 ) :
+            if ($activation['activated'] != 1 ) {
                 continue; 
-            endif;
+            }
             // Format date
             $date_raw = $activation['created_at'] ?? '';
             $date_formatted = '';
-            if ($date_raw) :
+            if ($date_raw) {
                 try {
                     $dt = new DateTime($date_raw);
                     $date_formatted = $dt->format('d/m/Y');
                 } catch (Exception $e) {
                     $date_formatted = esc_html($date_raw);
                 }
-            endif; ?>
+            } ?>
             <details name="activations" aria-label="Activation details for <?php echo esc_html(!empty($activation['device_tag']) ? $activation['device_tag'] : 'Unknown Device'); ?>">
                 <summary>
                     <strong><?php echo esc_html(!empty($activation['device_tag']) ? $activation['device_tag'] : 'Unknown Device'); ?></strong>
@@ -76,15 +74,11 @@ function keyzy_display_activations($serial, $api_key, $app_id) {
                     </div>
                 </div>
             </details>
-        <?php endforeach;
-        
-        // echo '<pre>';
-        // print_r($data);
-        // echo '</pre>';
+        <?php }
 
-    else :
+    } else {
         echo '<div class="activation-state"><span class="count">0</span> Activations</div>';
-    endif; ?>
+    } ?>
     
     <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -117,7 +111,7 @@ function keyzy_display_activations($serial, $api_key, $app_id) {
                     method: 'POST',
                     credentials: 'same-origin',
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                    body: 'action=keyzy_deactivate_license&activation_id=' + encodeURIComponent(activationId)
+                    body: 'action=keyzy_delete_license&activation_id=' + encodeURIComponent(activationId)
                 })
                 .then(response => response.json())
                 .then(data => {

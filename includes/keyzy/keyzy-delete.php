@@ -3,10 +3,10 @@
 require_once get_stylesheet_directory() . '/includes/keyzy/keyzy-api.php';
 
 // Add AJAX action for license deactivation
-add_action('wp_ajax_keyzy_deactivate_license', 'keyzy_deactivate_license_callback');
+add_action('wp_ajax_keyzy_delete_license', 'keyzy_delete_license_callback');
 
 // Function to handle license deactivation
-function keyzy_deactivate_license_callback() {
+function keyzy_delete_license_callback() {
     // Get activation ID from POST data
     $activation_id = intval($_POST['activation_id']);
     // Get API credentials
@@ -14,7 +14,7 @@ function keyzy_deactivate_license_callback() {
     $app_id  = defined('KEYZY_APP_ID') ? KEYZY_APP_ID : '';
 
     // Make API request to deactivate license
-    $response = keyzy_deactivate_license_api($activation_id, $app_id, $api_key);
+    $response = keyzy_delete_license_api($activation_id, $app_id, $api_key);
 
     // Handle response
     if (is_wp_error($response)) {

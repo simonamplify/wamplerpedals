@@ -117,11 +117,18 @@ function stockWarning() {
 // add_shortcode( 'productRecommendation', 'productRecommendation_shortcode' );
 
 // KEYZY LICENSE INCLUDE
-require_once get_stylesheet_directory() . '/includes/keyzy/keyzy-deactivate.php';
+$keyzy_deactivate = get_theme_file_path( '/includes/keyzy/keyzy-deactivate.php' );
+$keyzy_delete = get_theme_file_path( '/includes/keyzy/keyzy-delete.php' );
 $keyzy_enqueue = get_theme_file_path( '/includes/keyzy/keyzy.php' );
 if ( file_exists( $keyzy_enqueue ) ) {
+    require_once $keyzy_delete;
+    require_once $keyzy_deactivate;
     require_once $keyzy_enqueue;
 } else {
-    error_log( 'Missing include: ' . $keyzy_enqueue );
+    error_log( 'Missing include(s): ' 
+        . ( file_exists( $keyzy_enqueue ) ? '' : $keyzy_enqueue . ' ' )
+        . ( file_exists( $keyzy_deactivate ) ? '' : $keyzy_deactivate . ' ' )
+        . ( file_exists( $keyzy_delete ) ? '' : $keyzy_delete )
+    );
 }
 ?>

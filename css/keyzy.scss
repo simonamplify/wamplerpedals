@@ -112,13 +112,30 @@
                 padding: 0rem;
                 overflow: clip;
             }
-            details::details-content {
-                block-size: 0;
-                transition: block-size 0.3s, content-visibility 0.3s;
-                transition-behavior: allow-discrete;
+            // Fallback for all browsers
+            details > .content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s;
             }
-            details:open::details-content {
-                block-size: auto;
+            details[open] > .content {
+                max-height: 1000px;
+                overflow: visible;
+            }
+            // Progressive enhancement for browsers that support details-content
+            @supports (selector(::details-content)) {
+                details > .content,
+                details::details-content {
+                    max-height: initial;
+                    block-size: 0;
+                    transition: block-size 0.3s, content-visibility 0.3s;
+                    transition-behavior: allow-discrete;
+                }
+                details[open] > .content,
+                details:open::details-content {
+                    max-height: initial;
+                    block-size: auto;
+                }
             }
             details * {
                 margin: 0;

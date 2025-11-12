@@ -164,10 +164,13 @@
                 list-style-position: outside;
                 cursor: pointer;
                 position: relative;
+                list-style: none;
             }
             summary::marker {
-                content: '»';
                 content: none;
+            }
+            summary::-webkit-details-marker {
+                display: none;
             }
             summary::before {
                 content: '»';

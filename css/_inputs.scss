@@ -67,6 +67,7 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         height: 34px;
+        width: 34px !important;
         outline: none;
         display: inline-block;
         vertical-align: top;
@@ -114,7 +115,7 @@
             box-shadow: none;
             border-color: $tertiary-color;
         }
-        width: 34px;
+
         &::after {
             opacity: 0;
         }

@@ -1,0 +1,30 @@
+////////////////////////////////////////////
+// Withdrawal Form Styles
+////////////////////////////////////////////
+
+@use 'variables' as *;
+
+.wbte-ewb-form {
+    border-width: 2px;
+    border-style: dashed;
+    border-color: $quaternary-color-lht;
+    padding-top: 2em;
+    padding-right: 2em;
+    padding-bottom: 2em;
+    padding-left: 2em;
+    border-radius: 1.3rem;
+    .form-row {
+        padding-bottom: 0;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .wbte-ewb-btn {
+        line-height: 1.5em !important;
+    }
+    .form-row .input-text:focus,
+    .form-row select:focus,
+    .form-row textarea:focus {
+        box-shadow: 0 0 0 2px $tertiary-color;
+    }
+}

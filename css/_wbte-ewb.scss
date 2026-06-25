@@ -26,5 +26,6 @@
     .form-row select:focus,
     .form-row textarea:focus {
         box-shadow: 0 0 0 2px $tertiary-color;
+        border-color: #d1d5db;
     }
 }
